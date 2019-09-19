@@ -1,0 +1,5 @@
+﻿  ConsoleApplication1.cpp
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(9): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'std::string *'입니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(9): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'std::string *'입니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(34): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'std::string'입니다.
+  ConsoleApplication1.vcxproj -> C:\Users\leeho\Desktop\GitHub_project\2019_second_semester\ConsoleApplication1\Debug\ConsoleApplication1.exe
