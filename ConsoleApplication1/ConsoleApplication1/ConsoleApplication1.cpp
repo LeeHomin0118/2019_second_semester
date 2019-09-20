@@ -1,4 +1,27 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿#include <stdio.h>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main() {
+	int n;
+	const int num = 100;
+	vector <pair<int, int>> arr[num];
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		scanf("%d", &arr[i].first);
+		arr[i].second = i;
+	}
+	sort(arr, arr + n);
+	printf("%d %d", arr[n - 1].first, arr[n - 1].second);
+}
+
+
+
+
+
+
+/*
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string>
 #include <iostream>
@@ -34,3 +57,4 @@ int main() {
 	printf("%s", str3);
 	return 0;
 }
+*/

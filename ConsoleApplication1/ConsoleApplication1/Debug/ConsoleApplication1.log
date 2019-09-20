@@ -1,5 +1,51 @@
 ﻿  ConsoleApplication1.cpp
-c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(9): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'std::string *'입니다.
-c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(9): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'std::string *'입니다.
-c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(34): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'std::string'입니다.
-  ConsoleApplication1.vcxproj -> C:\Users\leeho\Desktop\GitHub_project\2019_second_semester\ConsoleApplication1\Debug\ConsoleApplication1.exe
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(11): error C2039: 'first': 'std::vector<std::pair<int,int>,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(8): note: 'std::vector<std::pair<int,int>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(11): warning C4473: 'scanf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(11): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(11): note: 누락된 variadic 인수 1이(가) 서식 문자열 '%d'에 필요합니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(12): error C2039: 'second': 'std::vector<std::pair<int,int>,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(8): note: 'std::vector<std::pair<int,int>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(15): error C2039: 'first': 'std::vector<std::pair<int,int>,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(8): note: 'std::vector<std::pair<int,int>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(15): error C2039: 'second': 'std::vector<std::pair<int,int>,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(8): note: 'std::vector<std::pair<int,int>,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(15): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(15): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 2개 필요하지만 0개가 제공되었습니다.
+  c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(15): note: 누락된 variadic 인수 1이(가) 서식 문자열 '%d'에 필요합니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(9): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(11): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
