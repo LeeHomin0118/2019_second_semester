@@ -1,1 +1,1 @@
-print(1)
+if __name__==__test_04_01__
