@@ -33,9 +33,9 @@ int main() {
 	for (int k = 0; k < 10; k++) {
 		printf("%d번째 사다리 게임\n", k + 1);
 		for (int i = 0; i < people; i++) {
-			printf("%c:( ", i + 65);
+			printf("%d:( ", i + 1);
 			for (int j = 0; j < people; j++) {
-				printf("%d : %03d ", j + 1, find_random[k][i][j]);
+				printf("%c : %03d ", j + 65, find_random[k][i][j]);
 			}
 			printf(")\n");
 		}
@@ -91,7 +91,7 @@ void ladder(int k, int rand) {
 
 void print_ladder() {
 	for (int i = 0; i < people; i++)
-		printf("%c          ", i + 65);
+		printf("%d          ", i + 1);
 	printf("\n");
 	for (int i = 0; i < (people * 10 + 11); i++) {
 		for (int j = 1; j <= people; j++) {
@@ -105,7 +105,7 @@ void print_ladder() {
 		printf("\n");
 	}
 	for (int i = 0; i < people; i++)
-		printf("%d          ", i + 1);
+		printf("%c          ", i + 65);
 }
 
 void print_result() {
@@ -116,14 +116,14 @@ void print_result() {
 			if (arr[tmp][j] == tmp) tmp++;
 			else if (arr[tmp][j] == tmp - 1 && arr[tmp][j] != 0) tmp--;
 		}
-		printf("%c : %d     ", i + 64, tmp--);
+		printf("%d : %c     ", i, 64 + tmp--);
 		result[i-1][tmp]++;
 	}
 	printf("\n지금까지의 총 결과\n");
 	for (int i = 0; i < people; i++) {
-		printf("%c:( ", i + 65);
+		printf("%d:( ", i + 1);
 		for (int j = 0; j < people; j++) {
-			printf("%d : %03d ", j + 1, result[i][j]);
+			printf("%c : %03d ", j + 65, result[i][j]);
 		}
 		printf(")\n");
 	}
