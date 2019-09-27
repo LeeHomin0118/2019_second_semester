@@ -10,11 +10,11 @@ int arr[people + 2][(people * 10 + 11)];
 int result[people][people] = { 0 };
 int find_random[10][people][people] = { 0 };
 
-int create_random_number(int min, int max);
-void create_ladder();
-void ladder(int k, int rand);
-void print_ladder();
-void print_result();
+int create_random_number(int min, int max);		//min <= number <= max의 number를 랜덤으로 뽑는 함수
+void create_ladder();							//사다리를 호출하는 함수
+void ladder(int k, int rand);					//다리를 랜덤으로 만들어주는 함수
+void print_ladder();							//사다리를 출력하는 함수
+void print_result();							//사다리를 타서 결과를 계산하고 출력하는 함수
 
 int main() {
 	for (int j = 0; j < 10; j++) {
@@ -61,28 +61,28 @@ int main() {
 
 void create_ladder() {
 	for (int j = 0; j < people + 2; j++)
-		for (int i = 0; i < people * 11; i++)
+		for (int i = 0; i < people * 10 + 11; i++)
 			arr[j][i] = 0;
 	for (int i = 1; i < people; i++)
-		ladder(i, create_random_number(people, people * 2));
+		ladder(i, create_random_number(people, people * 2 - create_random_number(0, people / 2)));
 	print_ladder();
 	print_result();
 }
 
-void ladder(int k, int random_number) {
+void ladder(int k, int rand) {
 	int cnt = 0;
 	while (1) {
 		for (int i = 1; i < (people * 10 + 10); i+=create_random_number(1, 3)) {
 			cnt++;
-			if (random_number == 0) break;
+			if (rand <= 0) break;
 			bool tmp = (arr[k][i] == 0 && arr[k][i - 1] == 0 && arr[k][i + 1] == 0);
-			if (create_random_number(0, 4) == 2 && random_number!=0 && tmp) {
+			if (create_random_number(0, 4) == 2 && rand!=0 && tmp) {
 				arr[k][i] = k;
 				arr[k + 1][i] = k;
-				random_number--;
+				rand--;
 			}
 		}
-		if (random_number == 0) break;
+		if (rand <= 0) break;
 	}
 	//printf("ladder : %d\n", cnt);
 	//printf("\n***%d***\n", k);
@@ -96,9 +96,11 @@ void print_ladder() {
 	for (int i = 0; i < (people * 10 + 11); i++) {
 		for (int j = 1; j <= people; j++) {
 			if (arr[j][i] == j)
-				printf("|----------");
+				printf("%c%c%c%c%c%c%c%c%c%c%c", 25, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6);
+			else if (arr[j][i] == j - 1 && arr[j][i] != 0)
+				printf("%c          ", 23);
 			else
-				printf("|          ");
+				printf("%c          ", 5);
 		}
 		printf("\n");
 	}
