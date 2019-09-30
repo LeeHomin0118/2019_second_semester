@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gugu", "gugu\gugu.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "사다리타기", "사다리타기\사다리타기.vcxproj", "{4670EA85-0FF8-4AB5-8D65-BED09E6942E8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "미로저장하기", "미로저장하기\미로저장하기.vcxproj", "{DA6D5D5D-1729-4E83-A92A-516E40882B9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -53,6 +55,14 @@ Global
 		{4670EA85-0FF8-4AB5-8D65-BED09E6942E8}.Release|x64.Build.0 = Release|x64
 		{4670EA85-0FF8-4AB5-8D65-BED09E6942E8}.Release|x86.ActiveCfg = Release|Win32
 		{4670EA85-0FF8-4AB5-8D65-BED09E6942E8}.Release|x86.Build.0 = Release|Win32
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Debug|x64.ActiveCfg = Debug|x64
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Debug|x64.Build.0 = Debug|x64
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Debug|x86.ActiveCfg = Debug|Win32
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Debug|x86.Build.0 = Debug|Win32
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Release|x64.ActiveCfg = Release|x64
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Release|x64.Build.0 = Release|x64
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Release|x86.ActiveCfg = Release|Win32
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +71,7 @@ Global
 		{C77B954F-3612-40F1-A036-9B411E2D85C3} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
 		{8F2EDE25-EA48-4631-882E-181759DD4819} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
 		{4670EA85-0FF8-4AB5-8D65-BED09E6942E8} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
+		{DA6D5D5D-1729-4E83-A92A-516E40882B9A} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BEB9394-6680-41A8-A1DC-4AFFEC0DE5C0}
