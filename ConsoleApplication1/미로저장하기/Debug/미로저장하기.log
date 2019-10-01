@@ -1,4 +1,4 @@
 ﻿  미로저장하기.cpp
-c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\미로저장하기\미로저장하기.cpp(45): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\미로저장하기\미로저장하기.cpp(72): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\미로저장하기\미로저장하기.cpp(105): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\미로저장하기\미로저장하기.cpp(132): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   미로저장하기.vcxproj -> C:\Users\leeho\Desktop\GitHub_project\2019_second_semester\ConsoleApplication1\Debug\미로저장하기.exe
