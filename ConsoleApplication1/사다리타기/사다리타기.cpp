@@ -5,10 +5,11 @@ using namespace std;
 
 //변수 people의 값을 바꾸면 몇명을 추첨할지 정할 수 있습니다.
 const int people = 5;
+const int constk = 10;
 
 int arr[people + 2][(people * 10 + 11)];
 int result[people][people] = { 0 };
-int find_random[10][people][people] = { 0 };
+int find_random[constk][people][people] = { 0 };
 
 int create_random_number(int min, int max);		//min <= number <= max의 number를 랜덤으로 뽑는 함수
 void create_ladder();							//사다리를 호출하는 함수
@@ -17,12 +18,12 @@ void print_ladder();							//사다리를 출력하는 함수
 void print_result();							//사다리를 타서 결과를 계산하고 출력하는 함수
 
 int main() {
-	for (int j = 0; j < 10; j++) {
+	for (int j = 0; j < constk; j++) {
 		for (int i = 0; i < people; i++)
 			for (int j = 0; j < people; j++)
 				result[i][j] = 0;
 		for (int i = 0; i < 100; i++) {
-			printf("\n%d 번째 사다리\n", i + 1);
+			printf("\n%2d 번째 사다리\n", i + 1);
 			create_ladder();
 		}
 		for (int i = 0; i < people; i++)
@@ -30,12 +31,12 @@ int main() {
 				find_random[j][i][k] = result[i][k];
 	}
 	printf("랜덤의 편향성 검증\n");
-	for (int k = 0; k < 10; k++) {
-		printf("%d번째 사다리 게임\n", k + 1);
+	for (int k = 0; k < constk; k++) {
+		printf("%2d번째 사다리 게임\n", k + 1);
 		for (int i = 0; i < people; i++) {
-			printf("%d:( ", i + 1);
+			printf("%2d:( ", i + 1);
 			for (int j = 0; j < people; j++) {
-				printf("%c : %03d ", j + 65, find_random[k][i][j]);
+				printf("%c : %3d ", j + 65, find_random[k][i][j]);
 			}
 			printf(")\n");
 		}
@@ -43,17 +44,17 @@ int main() {
 	}
 	for (int i = 0; i < people; i++) {
 		int sum[people] = { 0 };
-		for (int k = 0; k < 10; k++) {
-			printf("%02d번째%c:( ", k + 1, i + 65);
+		for (int k = 0; k < constk; k++) {
+			printf("%2d번째%c:( ", k + 1, i + 65);
 			for (int j = 0; j < people; j++) {
-				printf("%d : %03d ", j + 1, find_random[k][i][j]);
+				printf("%2d : %3d ", j + 1, find_random[k][i][j]);
 				sum[j] += find_random[k][i][j];
 			}
 			printf(")\n");
 		}
 		printf("%c의 평균:\n", i + 65);
 		for (int j = 0; j < people; j++) {
-			printf("%d의 평균: %02d ", j + 1, sum[j] / 10);
+			printf("%d의 평균: %2d ", j + 1, sum[j] / 10);
 		}
 		printf("\n");
 	}
@@ -91,7 +92,7 @@ void ladder(int k, int rand) {
 
 void print_ladder() {
 	for (int i = 0; i < people; i++)
-		printf("%d          ", i + 1);
+		printf("%2d         ", i + 1);
 	printf("\n");
 	for (int i = 0; i < (people * 10 + 11); i++) {
 		for (int j = 1; j <= people; j++) {
@@ -121,9 +122,9 @@ void print_result() {
 	}
 	printf("\n지금까지의 총 결과\n");
 	for (int i = 0; i < people; i++) {
-		printf("%d:( ", i + 1);
+		printf("%2d:( ", i + 1);
 		for (int j = 0; j < people; j++) {
-			printf("%c : %03d ", j + 65, result[i][j]);
+			printf("%c : %3d ", j + 65, result[i][j]);
 		}
 		printf(")\n");
 	}
