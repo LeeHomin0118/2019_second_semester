@@ -1,107 +1,58 @@
 ﻿#include <iostream>
+#include <cstring>
 #include <string>
+#include <algorithm>
+#include <vector>
+#include <stdlib.h>
 using namespace std;
-
-void student_management_menu() {
-	int choice_menu = 0;
-
-}
-
-class Student_info {
-private:
-	string name;
-	char department;
-	int studentid = 0;
-	int age = 0;
-	int tel = 0;
-public:
-	void Insertion() {
-		cout << "Name:";
-		getline(cin, name);
-		cout << "___" << name << "___";
+const int divnum = 1000000007;
+string sum(string x, string y) {
+	int num;
+	int carry = 0;
+	string result;
+	reverse(x.begin(), x.end());
+	reverse(y.begin(), y.end());
+	while (x.length() < y.length()) {
+		x += '0';
 	}
-
-};
-
-int main() {
-	Student_info S=Student_info();
-	S.Insertion();
-
-}
-
-
-/*
-#pragma warning(disable:4996)
-#include <fstream>
-#include <string>
-#include <iostream>
-
-using namespace std;
-
-class student_Information {
-private:
-	string name;
-	string department;
-	int student_id = 0;
-	int age = 0;
-	int tel = 0;
-public:
-	void insertion();
-	void search();
-	void name_Check();
-};
-
-void student_Information::search() {
-
-}
-
-void student_Information::name_Check() {
-
-}
-
-void student_Information::insertion() {
-	cout << "Name :";
-	getline(cin, name);
-
-	cout << "Student ID :";
-	cin >> student_id;
-
-	cout << "Age :";
-	cin >> age;
-
-	cout << "Department :";
-	getline(cin, department);
-
-	cout << "Tel :";
-	cin >> tel;
-}
-
-void student_Management_Menu() {
-	int choice_Menu = 0;
-	student_Information a = student_Information();
-
-	cout << "******** MENU ********" << endl;
-	cout << " 1. INSERTION" << endl;
-	cout << " 2. SEARCH" << endl;
-	cout << " 3. EXIT" << endl;
-	cout << "**********************" << endl << endl;
-	cout << ">";
-
-	cin >> choice_Menu;
-
-	switch (choice_Menu) {
-	case 1:
-		a.insertion();
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	default:
-		cout << "wrong input" << endl;
-		break;
+	while (x.length() > y.length()) {
+		y += '0';
 	}
-
-
+	for (int i = 0; i < x.length(); ++i) {
+		num = (x[i] - '0' + y[i] - '0' + carry) % 10;
+		result += to_string(num);
+		carry = (x[i] - '0' + y[i] - '0' + carry) / 10;
+	}
+	if (carry != 0) {
+		result += to_string(carry);
+	}
+	reverse(result.begin(), result.end());
+	return result;
 }
-*/
+
+int main(int argc, char* argv[]) {
+	int n;
+	string a;
+	string b;
+	string result;
+	cin >> n;
+	a = '0';
+	b = '1';
+	if (n == 0) {
+		result = "0";
+		printf("0");
+		return 0;
+	}
+	if (n == 1) {
+		result = "1";
+		printf("1");
+		return 0;
+	}
+	for (int i = 2; i <= n; ++i) {
+		result = sum(a, b);
+		a = b;
+		b = result;
+	}
+	cout << result << endl;
+	return 0;
+}
