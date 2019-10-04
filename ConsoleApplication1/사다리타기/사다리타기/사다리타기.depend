@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1570171142 source:c:\users\leeho\onedrive\codeblock\사다리타기\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
