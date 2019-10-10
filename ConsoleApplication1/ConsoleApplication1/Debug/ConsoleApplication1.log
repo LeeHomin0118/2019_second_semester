@@ -1,1 +1,3 @@
-﻿  ConsoleApplication1.vcxproj -> C:\Users\leeho\Desktop\GitHub_project\2019_second_semester\ConsoleApplication1\Debug\ConsoleApplication1.exe
+﻿  ConsoleApplication1.cpp
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\consoleapplication1\consoleapplication1.cpp(22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  ConsoleApplication1.vcxproj -> C:\Users\leeho\Desktop\GitHub_project\2019_second_semester\ConsoleApplication1\Debug\ConsoleApplication1.exe

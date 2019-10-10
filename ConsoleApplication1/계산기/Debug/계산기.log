@@ -1,0 +1,5 @@
+﻿  계산기.cpp
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(258): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(330): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(320): warning C4715: 'operator-': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  계산기.vcxproj -> C:\Users\leeho\Desktop\GitHub_project\2019_second_semester\ConsoleApplication1\Debug\계산기.exe
