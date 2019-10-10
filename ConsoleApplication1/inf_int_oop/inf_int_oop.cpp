@@ -246,13 +246,12 @@ inf_int operator-(const inf_int& source, const inf_int& dest)
 		}
 		std::string str_normal = left.digits;
 		std::string str_complement = right.digits;
-		cout << str_normal << "   " << str_complement << endl;
+
 		//자릿수 보정
 		int len_abs = abs((int)(str_normal.length() - str_complement.length()));
 		for (int i = 0; i < len_abs; i++) {
 			str_complement += '0';
 		}
-		cout << str_normal << "   " << str_complement << endl;
 
 		//10의보수 만들기
 		for (int i = 0; i < str_complement.length(); i++) {
@@ -262,7 +261,6 @@ inf_int operator-(const inf_int& source, const inf_int& dest)
 
 		reverse(str_complement.begin(), str_complement.end());
 		reverse(str_normal.begin(), str_normal.end());
-		cout << str_normal << "   " << str_complement << endl;
 
 		inf_int a(str_complement.c_str());
 		inf_int b(str_normal.c_str());
@@ -404,48 +402,3 @@ int main()
 	cout << (aa * bb) << endl;
 	return 0;
 }
-
-/*
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstring>
-#include <string>
-#include <algorithm>
-#include <vector>
-#include <stdlib.h>
-using namespace std;
-string sum(string x, string y) {
-	int num;
-	int carry = 0;
-	string result;
-	reverse(x.begin(), x.end());
-	reverse(y.begin(), y.end());
-	while (x.length() < y.length()) {
-		x += '0';
-	}
-	while (x.length() > y.length()) {
-		y += '0';
-	}
-	for (int i = 0; i < x.length(); ++i) {
-		num = (x[i] - '0' + y[i] - '0' + carry) % 10;
-		result += to_string(num);
-		carry = (x[i] - '0' + y[i] - '0' + carry) / 10;
-	}
-	if (carry != 0) {
-		result += to_string(carry);
-	}
-	reverse(result.begin(), result.end());
-	return result;
-}
-int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-	string a, b;
-	string result;
-	cin >> a >> b;
-	result = sum(a, b);
-	cout << result << endl;
-	return 0;
-}
-*/

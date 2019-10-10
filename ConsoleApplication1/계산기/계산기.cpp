@@ -7,19 +7,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 using namespace std;
-
 /*
+덧셈:
 a + b = a + b			0	solve
--a + b = b - a			1
-a + -b = a - b			1
+-a + b = b - a			1	solve
+a + -b = a - b			1	solve
 -a + -b = -(a + b)		0	solve
-
+뺄셈
 a - b = a - b			1	solve
 -a - b = -(a + b)		0	solve
 a - -b = a + b			0	solve
 -a - -b = b - a			1	solve
 */
-
 string sum(string x, string y, bool ckx, bool cky);
 string sub(string x, string y, bool ckx, bool cky);
 string multi(string x, string y, bool ckx, bool cky);
@@ -43,28 +42,34 @@ int main() {
 		b.erase(b.begin() + 0);
 		ckb = false;
 	}
-	if (cka == ckb) {
-		result = sum(a, b, cka, ckb);
+	//앞에 들어온 0을 지워줌
+	while (1) {
+		if (a.length() == 1) { break; }
+		if (a[0] == '0') {
+			a.erase(a.begin() + 0);
+		}
+		else { break; }
 	}
-	else {
-		result = sub(a, b, cka, ckb);
+	while (1) {
+		if (b.length() == 1) { break; }
+		if (b[0] == '0') {
+			b.erase(b.begin() + 0);
+		}
+		else { break; }
 	}
+	if (cka == ckb) { result = sum(a, b, cka, ckb); }
+	else { result = sub(a, b, cka, ckb); }
 	cout << "X + Y = " << result << endl;
-	if (cka == ckb) {
-		result = sub(a, b, cka, ckb);
-	}
-	else {
-		result = sum(a, b, cka, ckb);
-	}
+	if (cka == ckb) { result = sub(a, b, cka, ckb); }
+	else { result = sum(a, b, cka, ckb); }
 	cout << "X - Y = " << result << endl;
+	result = multi(a, b, cka, ckb);
+	cout << "X * Y = " << result << endl;
 	return 0;
 }
 
 string sum(string x, string y, bool ckx, bool cky)			//더하기 함수
 {
-	if (x == y && ckx != cky) {
-		return "0";
-	}
 	int num;
 	int carry = 0;
 	string result;
@@ -89,6 +94,7 @@ string sum(string x, string y, bool ckx, bool cky)			//더하기 함수
 		result += '-';
 	}
 	reverse(result.begin(), result.end());
+	//printf("sum\n");
 	return result;
 }
 
@@ -99,132 +105,93 @@ string sub(string x, string y, bool ckx, bool cky)			//빼기 함수
 	}
 	string result;
 	bool flag = false;
-	if ((ckx && cky) || (ckx == false && cky == false)) {		//두 수가 모두 양수 or 음수인 경우
-		bool flagneg = true;
-		if (ckx == false && cky == false) {		//음수의 경우 두 flag 참
-			flagneg = true;
-		}
-		//절댓값이 큰 수를 파악하고 위치를 잡아준다.
-		//만약 위치가 바뀐다면 연산이 끝나고 -를 붙여준다.
-		if (x.length() == y.length()) {
-			for (int i = 0; i < x.length(); i++) {
-				if (x[i] < y[i]) {
-					string tmp = x;
-					x = y;
-					y = tmp;
-					flag = true;	//끝나고 -를 붙인다는 flag
-				}
-			}
-		}
-		else {
-			if (x.length() < y.length()) {
+	bool flagneg = true;
+	if ((ckx == false && cky == false) || (ckx == false)) {		//음수로 표기할것 flag 참
+		flagneg = true;
+	}
+	//절댓값이 큰 수를 파악하고 위치를 잡아준다.
+	//만약 위치가 바뀐다면 연산이 끝나고 -를 붙여준다.
+	if (x.length() == y.length()) {
+		for (int i = 0; i < x.length(); i++) {
+			if (x[i] < y[i]) {
 				string tmp = x;
 				x = y;
-				y = x;
-				flag = true;
+				y = tmp;
+				flag = true;	//끝나고 -를 붙인다는 flag
 			}
 		}
-		reverse(x.begin(), x.end());
-		reverse(y.begin(), y.end());
-		//cout << x << "   " << y << endl;
-		int len = abs((int)(x.length() - y.length()));
-		int lensave = x.length();
-		for (int i = 0; i < len; i++) {
-			y += '0';
-		}
-		for (int i = 0; i < y.length(); i++) {
-			y[i] = '9' - y[i] + '0';
-		}
-		y[0]++;
-		//cout << x << "   " << y << endl;
-		reverse(x.begin(), x.end());
-		reverse(y.begin(), y.end());
-		//cout << x << "   " << y << endl;
-		result = sum(y, x, true, true);
-		reverse(result.begin(), result.end());
-		result.erase(lensave);
-		reverse(result.begin(), result.end());
-		while (1) {
-			if (result[0] == '0') {
-				result.erase(result.begin() + 0);
-			}
-			else {
-				break;
-			}
-		}
-		reverse(result.begin(), result.end());
-		if (flag && flagneg) {
-			result += '-';
-		}
-		reverse(result.begin(), result.end());
-		return result;
 	}
+	else {
+		if (x.length() < y.length()) {
+			string tmp = x;
+			x = y;
+			y = tmp;
+			flag = true;
+	}
+	}
+	reverse(x.begin(), x.end());
+	reverse(y.begin(), y.end());
+	//cout << x << "   " << y << endl;
+	int len = abs((int)(x.length() - y.length()));
+	int lensave = x.length();
+	for (int i = 0; i < len; i++) {
+		y += '0';
+	}
+	for (int i = 0; i < y.length(); i++) {
+		y[i] = '9' - y[i] + '0';
+	}
+	y[0]++;
+	//cout << x << "   " << y << endl;
+	reverse(x.begin(), x.end());
+	reverse(y.begin(), y.end());
+	//cout << x << "   " << y << endl;
+	result = sum(y, x, true, true);
+	reverse(result.begin(), result.end());
+	result.erase(lensave);
+	reverse(result.begin(), result.end());
+	while (1) {
+		if (result.length() == 1) { break; }
+		if (result[0] == '0') {
+			result.erase(result.begin() + 0);
+		}
+		else { break; }
+	}
+	reverse(result.begin(), result.end());
+	if (flag && flagneg) {
+		result += '-';
+	}
+	reverse(result.begin(), result.end());
+	//printf("sub-1\n");
+	return result;
 }
 
 string multi(string x, string y, bool ckx, bool cky)		//곱하기 함수
 {
+	string result;
 	if (x == "0" || y == "0") {
 		return "0";
 	}
-	return x;
+	string tmpx = x;
+	reverse(tmpx.begin(), tmpx.end());
+	//카라츠바 algorithm
+	for (int i = 0; i < x.length(); i++) {
+		int cnt = tmpx[i] - '0';
+		for (int i = 0; i < cnt; i++) {
+			result = sum(result, y, true, true);
+		}
+		//cout << cnt << "  +  " << result << endl;
+		//cout << y << endl;
+		//cout << y << endl;
+		y += "0";
+		// << y << endl;
+	}
+	reverse(result.begin(), result.end());
+	if (ckx != cky) {
+		result += '-';
+	}
+	reverse(result.begin(), result.end());
+	return result;
 }
-
-
-/*
-#include <stdio.h>
-#include <string.h>
-#include <iostream>
-using namespace std;
-#define MAX 256 //최대 자릿수 
-int main()
-{
-	int count, len1, len2;
-	char *ptr1, *ptr2;
-	char num1[MAX + 1], num2[MAX + 1], sum[MAX + 2];
-
-	cout << "input X. ";
-	cin >> num1;
-	cout << "input Y. ";
-	cin >> num2;
-	//큰수를 ptr1 으로 작은수를 ptr2 로 설정 
-	if (strlen(num1) < strlen(num2)) { ptr1 = num2; ptr2 = num1; }
-	else { ptr1 = num1; ptr2 = num2; }
-
-	len1 = strlen(ptr1); len2 = strlen(ptr2);
-	// sum 배열은 올림값으로 인해.. 큰수보다 1자리 크게 설정.. 
-	sum[0] = '0'; sum[len1 + 1] = 0x00;
-	// string 상태에서 더함, ptr2 - '0' 은.. ptr2만 문자를 수치로 변환.. 이중으로 더해짐을 방지. 
-	for (count = 0; count < len2; count++)
-		sum[len1 - count] = ptr1[len1 - count - 1] - (ptr2[len2 - count - 1] - '0');
-	for (; count < len1; count++) sum[len1 - count] = ptr1[len1 - count - 1];
-
-	// 내림값 처리부분 
-
-	for (count = len1; count > 0; count--)
-		if (sum[count] < '0') { sum[count - 1]--; sum[count] += 10; }
-	if (sum[0] < '0') sum[0] = '-';
-	printf("%s - %s = %s\n", num1, num2, (sum[0] == '0') ? &sum[1] : &sum[0]);
-
-	return 0;
-}
-
-
-
-
-//[[[[ 추가사항 : 이 소스를 뺄셈으로 바꾸는 방법 ]]]]
-  for ( count = 0; count < len2; count++ )
-	sum[len1-count] = ptr1[len1-count-1] - (ptr2[len2-count-1] - '0');
-  for ( ; count < len1; count++ ) sum[len1-count] = ptr1[len1-count-1];
-  
-// 내림값 처리부분 
-
-  for ( count = len1; count > 0; count-- )
-	if ( sum[count] < '0' ) { sum[count-1]--; sum[count] += 10; }
-  if ( sum[0] < '0' ) sum[0] = '-';
-  printf ( "%s - %s = %s\n", num1, num2, (sum[0] == '0') ? &sum[1] : &sum[0] );
-  */
-
-
 
 /*
 string sum(string x, string y)		//더하기 함수
@@ -299,5 +266,50 @@ string sub(string x, string y)		//빼기 함수
 	}
 	reverse(result.begin(), result.end());
 	return result;
+}
+*/
+
+/*
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <stdlib.h>
+using namespace std;
+string sum(string x, string y) {
+	int num;
+	int carry = 0;
+	string result;
+	reverse(x.begin(), x.end());
+	reverse(y.begin(), y.end());
+	while (x.length() < y.length()) {
+		x += '0';
+	}
+	while (x.length() > y.length()) {
+		y += '0';
+	}
+	for (int i = 0; i < x.length(); ++i) {
+		num = (x[i] - '0' + y[i] - '0' + carry) % 10;
+		result += to_string(num);
+		carry = (x[i] - '0' + y[i] - '0' + carry) / 10;
+	}
+	if (carry != 0) {
+		result += to_string(carry);
+	}
+	reverse(result.begin(), result.end());
+	return result;
+}
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	string a, b;
+	string result;
+	cin >> a >> b;
+	result = sum(a, b);
+	cout << result << endl;
+	return 0;
 }
 */
