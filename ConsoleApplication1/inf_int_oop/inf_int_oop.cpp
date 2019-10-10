@@ -199,7 +199,6 @@ bool operator<(const inf_int& left, const inf_int& right)
 	}
 }
 
-
 inf_int operator+(const inf_int& a, const inf_int& b)
 {
 	inf_int c;
@@ -247,12 +246,13 @@ inf_int operator-(const inf_int& source, const inf_int& dest)
 		}
 		std::string str_normal = left.digits;
 		std::string str_complement = right.digits;
-
+		cout << str_normal << "   " << str_complement << endl;
 		//자릿수 보정
 		int len_abs = abs((int)(str_normal.length() - str_complement.length()));
 		for (int i = 0; i < len_abs; i++) {
 			str_complement += '0';
 		}
+		cout << str_normal << "   " << str_complement << endl;
 
 		//10의보수 만들기
 		for (int i = 0; i < str_complement.length(); i++) {
@@ -262,6 +262,7 @@ inf_int operator-(const inf_int& source, const inf_int& dest)
 
 		reverse(str_complement.begin(), str_complement.end());
 		reverse(str_normal.begin(), str_normal.end());
+		cout << str_normal << "   " << str_complement << endl;
 
 		inf_int a(str_complement.c_str());
 		inf_int b(str_normal.c_str());
@@ -350,7 +351,6 @@ inf_int operator*(const inf_int& cand, const inf_int& plier)
 
 	return result;
 }
-
 
 std::ostream& operator<<(std::ostream& out, const inf_int& source)
 {

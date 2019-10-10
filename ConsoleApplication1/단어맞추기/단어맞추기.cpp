@@ -11,7 +11,6 @@ int main() {
 		alen = strlen(tmpa);
 		blen = strlen(tmpb);
 		int mka = -1, mkb = -1;
-		printf("---%d %d---\n", mka, mkb);
 		for (int j = 0; j < alen; j++) {
 			bool ckbreak = false;
 			for (int i = 0; i < blen; i++) {
@@ -24,10 +23,8 @@ int main() {
 			}
 			if (ckbreak) break;
 		}
-		printf("---%d %d---\n", mka, mkb);
 		if (mka == -1 || mkb == -1) {
 			printf("no cross word");
-			strcpy(tmpa, tmpb);
 		}
 		else {
 			for (int i = 0; i < alen; i++) {
@@ -47,11 +44,15 @@ int main() {
 					printf("%c", tmpb[i]);
 				}
 			}
-			strcpy(tmpa, tmpb);
+		}
+		for (int i = 0; i < 10; i++) {
+			tmpa[i] = '\0';
+		}
+		strcpy(tmpa, tmpb);
+		for (int i = 0; i < 10; i++) {
+			tmpb[i] = '\0';
 		}
 		printf("\n");
-		mka = -1;
-		mkb = -1;
 	}
 	return 0;
 }
