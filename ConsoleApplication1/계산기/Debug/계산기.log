@@ -1,6 +1,6 @@
 ﻿  계산기.cpp
-c:\users\smmak\desktop\git_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(84): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\smmak\desktop\git_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(115): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\smmak\desktop\git_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(140): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\smmak\desktop\git_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(177): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  계산기.vcxproj -> C:\Users\smmak\Desktop\Git_project\2019_second_semester\ConsoleApplication1\Debug\계산기.exe
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(89): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(120): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(145): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\계산기\계산기.cpp(182): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  계산기.vcxproj -> C:\Users\leeho\Desktop\GitHub_project\2019_second_semester\ConsoleApplication1\Debug\계산기.exe

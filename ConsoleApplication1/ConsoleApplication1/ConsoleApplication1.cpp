@@ -7,6 +7,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 using namespace std;
+vector <pair<int, string>> a;
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int n;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		int tmpint;
+		string tmpstr;
+		cin >> tmpint >> tmpstr;
+		a.push_back(pair<int, string>(tmpint, tmpstr));
+	}
+	sort(a.begin(), a.end());
+	for (int i = 0; i < n; i++) {
+		cout << a[i].first << " " << a[i].second << endl;
+	}
+}
+
+
 /*
 덧셈:
 a + b = a + b			0	solve
@@ -19,6 +39,7 @@ a - b = a - b			1	solve
 a - -b = a + b			0	solve
 -a - -b = b - a			1	solve
 */
+/*
 string sum(string x, string y, bool ckx, bool cky);
 string sub(string x, string y, bool ckx, bool cky);
 string multi(string x, string y, bool ckx, bool cky);
@@ -180,65 +201,5 @@ string multi(string x, string y, bool ckx, bool cky)		//곱하기 함수
 	}
 	reverse(result.begin(), result.end());
 	return result;
-}
-/*
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstring>
-#include <string>
-#include <algorithm>
-#include <vector>
-#include <stdlib.h>
-using namespace std;
-const int divnum = 1000000007;
-string sum(string x, string y) {
-	int num;
-	int carry = 0;
-	string result;
-	reverse(x.begin(), x.end());
-	reverse(y.begin(), y.end());
-	while (x.length() < y.length()) {
-		x += '0';
-	}
-	while (x.length() > y.length()) {
-		y += '0';
-	}
-	for (int i = 0; i < x.length(); ++i) {
-		num = (x[i] - '0' + y[i] - '0' + carry) % 10;
-		result += to_string(num);
-		carry = (x[i] - '0' + y[i] - '0' + carry) / 10;
-	}
-	if (carry != 0) {
-		result += to_string(carry);
-	}
-	reverse(result.begin(), result.end());
-	return result;
-}
-
-int main(int argc, char* argv[]) {
-	int n;
-	string a;
-	string b;
-	string result;
-	cin >> n;
-	a = '0';
-	b = '1';
-	if (n == 0) {
-		result = "0";
-		printf("0");
-		return 0;
-	}
-	if (n == 1) {
-		result = "1";
-		printf("1");
-		return 0;
-	}
-	for (int i = 2; i <= n; ++i) {
-		result = sum(a, b);
-		a = b;
-		b = result;
-	}
-	cout << result << endl;
-	return 0;
 }
 */
