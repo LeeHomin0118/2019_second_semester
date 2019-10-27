@@ -1,4 +1,14 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
+extern "C" {
+#include <stdio.h>
+	int main(){
+		char str[10];
+		scanf("%9s", str);
+		printf("%s", str);
+	}
+}
+/*
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -25,7 +35,7 @@ int main() {
 		cout << a[i].first << " " << a[i].second << endl;
 	}
 }
-
+*.
 
 /*
 덧셈:
