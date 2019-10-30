@@ -1,215 +1,123 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 extern "C" {
 #include <stdio.h>
-	int main(){
-		char str[10];
-		scanf("%9s", str);
-		printf("%s", str);
-	}
-}
-/*
-#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstring>
-#include <string>
-#include <algorithm>
-#include <vector>
 #include <stdlib.h>
-#include <stdio.h>
-using namespace std;
-vector <pair<int, string>> a;
-int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-	int n;
-	scanf("%d", &n);
-	for (int i = 0; i < n; i++) {
-		int tmpint;
-		string tmpstr;
-		cin >> tmpint >> tmpstr;
-		a.push_back(pair<int, string>(tmpint, tmpstr));
-	}
-	sort(a.begin(), a.end());
-	for (int i = 0; i < n; i++) {
-		cout << a[i].first << " " << a[i].second << endl;
-	}
-}
-*.
+#include <string.h>
+#include <time.h>
+#define MAX_STR 100				//문자열의 길이 제한
+#define MAX_PERSON 100			//학생수 제한
 
-/*
-덧셈:
-a + b = a + b			0	solve
--a + b = b - a			1	solve
-a + -b = a - b			1	solve
--a + -b = -(a + b)		0	solve
-뺄셈
-a - b = a - b			1	solve
--a - b = -(a + b)		0	solve
-a - -b = a + b			0	solve
--a - -b = b - a			1	solve
-*/
-/*
-string sum(string x, string y, bool ckx, bool cky);
-string sub(string x, string y, bool ckx, bool cky);
-string multi(string x, string y, bool ckx, bool cky);
+	typedef struct Score {		//성적 저장
+		int korean;
+		int english;
+		int math;
+		int sum;
+		int avg;
+	} SScore;
 
-int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-	string a, b;
-	string result;
-	cout << "input X. ";
-	cin >> a;
-	cout << "input Y. ";
-	cin >> b;
-	bool cka = true, ckb = true;
-	if (a[0] == '-') {
-		a.erase(a.begin() + 0);
-		cka = false;
-	}
-	if (b[0] == '-') {
-		b.erase(b.begin() + 0);
-		ckb = false;
-	}
-	//앞에 들어온 0을 지워줌
-	while (1) {
-		if (a.length() == 1) { break; }
-		if (a[0] == '0') {
-			a.erase(a.begin() + 0);
-		}
-		else { break; }
-	}
-	while (1) {
-		if (b.length() == 1) { break; }
-		if (b[0] == '0') {
-			b.erase(b.begin() + 0);
-		}
-		else { break; }
-	}
-	if (cka == ckb) { result = sum(a, b, cka, ckb); }
-	else { result = sub(a, b, cka, ckb); }
-	cout << "X + Y = " << result << endl;
-	if (cka == ckb) { result = sub(a, b, cka, ckb); }
-	else { result = sum(a, b, cka, ckb); }
-	cout << "X - Y = " << result << endl;
-	result = multi(a, b, cka, ckb);
-	cout << "X * Y = " << result << endl;
-	return 0;
-}
+	typedef struct Person {		//학생정보 저장
+		char name[MAX_STR];
+		char pnumber[MAX_STR];
+		SScore score;
+	} SPerson;
 
-string sum(string x, string y, bool ckx, bool cky)			//더하기 함수
-{
-	int num;
-	int carry = 0;
-	string result;
-	reverse(x.begin(), x.end());
-	reverse(y.begin(), y.end());
-	while (x.length() < y.length()) {
-		x += '0';
-	}
-	while (x.length() > y.length()) {
-		y += '0';
-	}
-	for (int i = 0; i < x.length(); ++i) {
-		num = (x[i] - '0' + y[i] - '0' + carry) % 10;
-		result += to_string(num);
-		carry = (x[i] - '0' + y[i] - '0' + carry) / 10;
-	}
-	if (carry != 0) {
-		result += to_string(carry);
-	}
-	if (!ckx && !cky || ckx == false) {
-		result += '-';
-	}
-	reverse(result.begin(), result.end());
-	return result;
-}
+	void one(SPerson *a);
+	void two(SPerson *a);
+	void input(SPerson *a);
+	void print(SPerson *a);
 
-string sub(string x, string y, bool ckx, bool cky)			//빼기 함수
-{
-	if (x == y && ckx == cky) {
-		return "0";
-	}
-	string result;
-	bool flag = false;
-	bool flagneg = true;
-	if ((ckx == false && cky == false) || (ckx == false)) {		//음수로 표기할것 flag 참
-		flagneg = true;
-	}
-	//절댓값이 큰 수를 파악하고 위치를 잡아준다.
-	//만약 위치가 바뀐다면 연산이 끝나고 -를 붙여준다.
-	if (x.length() == y.length()) {
-		for (int i = 0; i < x.length(); i++) {
-			if (x[i] < y[i]) {
-				string tmp = x;
-				x = y;
-				y = tmp;
-				flag = true;	//끝나고 -를 붙인다는 flag
+	int main() {
+		SPerson arr[MAX_PERSON];
+		printf("1. Add a person\n");
+		printf("2. Print the list\n");
+		printf("0. Quit the program\n");
+		int cnt = 0;
+		while(1) {
+			printf("Enter the command: ");
+			int a;
+			scanf("%d", &a);
+			fflush(stdin);
+			switch (a) {
+			case 1: {		//입력
+				if (cnt == 100) {
+					printf("Array is now full\n");
+					break;
+				}
+				one(&arr[cnt]); 
+				cnt++;  
+				break; 
+			}
+			case 2: {		//출력 ---> 학생이 있는지와 아예 0명인지를 확인
+				if (cnt == 0) {
+					printf("Please enter the person\n");
+					break;
+				}
+				int cnttmp = 3;
+				while (cnttmp--) {
+					char tmp[MAX_STR];
+					int flag = 0;
+					printf("Enter the name who you want to find: ");
+					scanf("%s", tmp);
+					for (int i = 0; i < cnt; i++) {
+						if (!strcmp(arr[i].name, tmp)) {
+							two(&arr[i]);
+							flag = 1;
+							break;
+						}
+					}
+					if (flag == 1) {
+						break;
+					}
+					printf("re");
+				}
+				/*
+				if (cnttmp == 0) {
+					printf("There is no such name\n");
+				}
+				*/
+				break;
+			}
+			case 0: exit(0); break;		//종료
+			default: printf("There is no such command\n"); break;	//예외 확인
 			}
 		}
+
 	}
-	else {
-		if (x.length() < y.length()) {
-			string tmp = x;
-			x = y;
-			y = tmp;
-			flag = true;
-		}
+
+	void one(SPerson *a) {		//입력
+		input(a);
 	}
-	reverse(x.begin(), x.end());
-	reverse(y.begin(), y.end());
-	int len = abs((int)(x.length() - y.length()));
-	int lensave = x.length();
-	for (int i = 0; i < len; i++) {
-		y += '0';
+
+	void two(SPerson *a) {		//출력
+		print(a);
 	}
-	for (int i = 0; i < y.length(); i++) {
-		y[i] = '9' - y[i] + '0';
+
+	void input(SPerson *a) {	//입력
+		printf("Enter the name: ");
+		scanf("%s", a->name);
+		//gets(a->name);
+		printf("Enter the phone number: ");
+		scanf("%s", a->pnumber);
+		//gets(a->pnumber);
+		printf("Enter the Korean score: ");
+		scanf("%d", &a->score.korean);
+		printf("Enter the English score: ");
+		scanf("%d", &a->score.english);
+		printf("Enter the Math score: ");
+		scanf("%d", &a->score.math);
+		a->score.sum = a->score.korean + a->score.english + a->score.math;
+		a->score.avg = a->score.sum / 3;
 	}
-	y[0]++;
-	reverse(x.begin(), x.end());
-	reverse(y.begin(), y.end());
-	result = sum(y, x, true, true);
-	reverse(result.begin(), result.end());
-	result.erase(lensave);
-	reverse(result.begin(), result.end());
-	while (1) {
-		if (result.length() == 1) { break; }
-		if (result[0] == '0') {
-			result.erase(result.begin() + 0);
-		}
-		else { break; }
+
+	void print(SPerson *a) {	//출력
+		printf("Name: %s\n", a->name);
+		printf("Telephone: %s\n", a->pnumber);
+		printf("Korean score: %d\n", a->score.korean);
+		printf("English score: %d\n", a->score.english);
+		printf("Math score: %d\n", a->score.math);
+		printf("SUM: %d\n", a->score.sum);
+		printf("AVG: %d\n", a->score.avg);
 	}
-	reverse(result.begin(), result.end());
-	if (flag && flagneg) {
-		result += '-';
-	}
-	reverse(result.begin(), result.end());
-	return result;
 }
 
-string multi(string x, string y, bool ckx, bool cky)		//곱하기 함수
-{
-	string result;
-	if (x == "0" || y == "0") {
-		return "0";
-	}
-	string tmpx = x;
-	reverse(tmpx.begin(), tmpx.end());
-	for (int i = 0; i < x.length(); i++) {
-		int cnt = tmpx[i] - '0';
-		for (int i = 0; i < cnt; i++) {
-			result = sum(result, y, true, true);
-		}
-		y += "0";
-	}
-	reverse(result.begin(), result.end());
-	if (ckx != cky) {
-		result += '-';
-	}
-	reverse(result.begin(), result.end());
-	return result;
-}
-*/
+
