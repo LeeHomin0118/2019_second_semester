@@ -7,7 +7,7 @@ extern "C" {
 #define MAX_STR 100				//문자열의 길이 제한
 #define MAX_PERSON 100			//학생수 제한
 
-	typedef struct Score {		//성적 저장
+	typedef struct SCORE {		//성적 저장
 		int korean;
 		int english;
 		int math;
@@ -15,7 +15,7 @@ extern "C" {
 		int avg;
 	} SScore;
 
-	typedef struct Person {		//학생정보 저장
+	typedef struct PERSON {		//학생정보 저장
 		char name[MAX_STR];
 		char pnumber[MAX_STR];
 		SScore score;
@@ -27,11 +27,16 @@ extern "C" {
 	void print(SPerson *a);
 
 	int main() {
-		SPerson arr[MAX_PERSON];
+		SPerson arr[MAX_PERSON] = {   //미리 데이터셋 3명 입력
+			{ "이호민", "010-9142-8488", 100, 90, 80 },
+			{ "신연진", "010-1234-1234", 80, 90, 100 },
+			{ "설지환", "010-1234-5678", 100, 50, 100 }
+		};
 		printf("1. Add a person\n");
 		printf("2. Print the list\n");
 		printf("0. Quit the program\n");
-		int cnt = 0;
+		int cnt = 0;	//학생의 명수를 카운트
+		cnt = 3;		//3명을 미리 저장해 뒀기 때문에 값 지정
 		while (1) {
 			printf("Enter the command: ");
 			int a;
@@ -39,7 +44,7 @@ extern "C" {
 			fflush(stdin);
 			switch (a) {
 			case 1: {		//입력
-				if (cnt == 100) {
+				if (cnt == MAX_PERSON) {
 					printf("Array is now full\n");
 					break;
 				}
@@ -105,11 +110,12 @@ extern "C" {
 		scanf("%d", &a->score.english);
 		printf("Enter the Math score: ");
 		scanf("%d", &a->score.math);
-		a->score.sum = a->score.korean + a->score.english + a->score.math;
-		a->score.avg = a->score.sum / 3;
 	}
 
 	void print(SPerson *a) {	//출력
+		//출력시에 계산하는게 미리 값을 지정할 때 편함
+		a->score.sum = a->score.korean + a->score.english + a->score.math;
+		a->score.avg = a->score.sum / 3;
 		printf("Name: %s\n", a->name);
 		printf("Telephone: %s\n", a->pnumber);
 		printf("Korean score: %d\n", a->score.korean);
@@ -119,5 +125,3 @@ extern "C" {
 		printf("AVG: %d\n", a->score.avg);
 	}
 }
-
-
