@@ -1,0 +1,8 @@
+word='\uAC00'.encode('utf-8')
+print(word)
+print(len(word))
+print(word.decode('utf-8'))
+print(ord('가'))
+print(chr(65))
+print("\u0041")
+print("\uAC00")
