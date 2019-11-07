@@ -3,6 +3,91 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+
+
+typedef struct {
+	char name[10];
+	int kor;
+	int eng;
+	int math;
+} s_std;
+
+int compare_name(const void *a, const void *b) {
+	return strcmp(((s_std*)a)->name, ((s_std*)b)->name);
+}
+
+int compare_kor(const void *a, const void *b) {
+	return ((s_std*)a)->kor, ((s_std*)b)->kor;
+}
+
+int main() {
+	s_std std[10] = {
+	{"lee", 100, 80, 70},
+	{"yon", 99, 79, 69},
+	{"a", 98, 78, 68},
+	{"cc", 97, 77, 67},
+	{"ddf", 96, 76, 66},
+	{"dfg", 95, 75, 65},
+	{"nvb", 94, 74, 64},
+	{"awr", 93, 73, 63},
+	{"jpo", 92, 72, 62},
+	{"zfbf", 91, 71, 61},
+	};
+
+	qsort(std, 10, sizeof(s_std), compare_name);
+	for (int i = 0; i < 10; i++) {
+		printf("%s %d %d %d\n", std[i].name, std[i].kor, std[i].eng, std[i].math);
+	}
+	printf("--------------------------------\n");
+	qsort(std, 10, sizeof(s_std), compare_kor);
+	for (int i = 0; i < 10; i++) {
+		printf("%s %d %d %d\n", std[i].name, std[i].kor, std[i].eng, std[i].math);
+	}
+}
+
+/*
+typedef struct student {
+	int kor;
+	int eng;
+	struct student *mystd;
+} S_student;
+
+int main() {
+	S_student std3 = { 70, 88, NULL };
+	S_student std2 = { 80, 70, &std3 };
+	S_student std1 = { 90, 66, &std2 };
+	S_student *ptr = &std1;
+	for (int i = 0; i < 3; i++) {
+		printf("%d %d\n", ptr->kor, ptr->eng);
+		ptr = ptr->mystd;
+	}
+	printf("--------------------\n");
+	ptr = &std1;
+	while (ptr) {
+		printf("%d %d\n", ptr->kor, ptr->eng);
+		ptr = ptr->mystd;
+	}
+}
+*/
+
+/*
+int main() {
+	int n;
+	printf("학생수는? ");
+	scanf("%d", &n);
+	int *score;
+	score = malloc(n * sizeof(int));
+	int sum = 0;
+	for (int i = 0; i < n; i++) {
+		scanf("%d", &score[i]);
+		printf("%d\n", score[i]);
+		sum += score[i];
+	}
+	printf("sum : %d\navg : %d", sum, sum / n);
+}
+*/
+
+/*
 #define MAX_STR 100				//문자열의 길이 제한
 #define MAX_PERSON 100			//학생수 제한
 
@@ -65,7 +150,7 @@
 		printf("Math score: %3d ", a->score.math);
 		printf("SUM: %3d\n", a->score.sum);
 	}
-
+*/
 /*
 extern "C" {
 #include <stdio.h>
