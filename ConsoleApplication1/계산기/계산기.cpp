@@ -112,7 +112,7 @@ string sub(string x, string y, bool ckx, bool cky)			//빼기 함수
 	bool flag = false;
 	bool flagneg = true;
 	if ((ckx == false && cky == false) || (ckx == false)) {		//음수로 표기할것 flag 참
-		flagneg = true;
+		flagneg = false;
 	}
 	//절댓값이 큰 수를 파악하고 위치를 잡아준다.
 	//만약 위치가 바뀐다면 연산이 끝나고 -를 붙여준다.

@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "구조체_성적출력", "�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "도서관대여", "도서관대여\도서관대여.vcxproj", "{9818716F-5756-40EE-BA50-94401F7FC60B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "마블게임", "마블게임\마블게임.vcxproj", "{F21B4A5C-3374-4D4A-89E7-BD144C697453}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -123,6 +125,14 @@ Global
 		{9818716F-5756-40EE-BA50-94401F7FC60B}.Release|x64.Build.0 = Release|x64
 		{9818716F-5756-40EE-BA50-94401F7FC60B}.Release|x86.ActiveCfg = Release|Win32
 		{9818716F-5756-40EE-BA50-94401F7FC60B}.Release|x86.Build.0 = Release|Win32
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Debug|x64.ActiveCfg = Debug|x64
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Debug|x64.Build.0 = Debug|x64
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Debug|x86.ActiveCfg = Debug|Win32
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Debug|x86.Build.0 = Debug|Win32
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Release|x64.ActiveCfg = Release|x64
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Release|x64.Build.0 = Release|x64
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Release|x86.ActiveCfg = Release|Win32
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +147,7 @@ Global
 		{AAAFEE1C-4C99-4FF9-B13A-556D9AC31F02} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
 		{8C6508B6-BB3B-42BD-A06F-774BB5701A4F} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
 		{9818716F-5756-40EE-BA50-94401F7FC60B} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
+		{F21B4A5C-3374-4D4A-89E7-BD144C697453} = {47892F65-2D70-4ADD-8954-6DDB043FB26A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BEB9394-6680-41A8-A1DC-4AFFEC0DE5C0}
