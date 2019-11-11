@@ -4,18 +4,15 @@
 #include <string.h>
 #include <time.h>
 
-//sangsangdomothanhandlename
-const char *password = "kkk";
+const char *password = "kkk";		//sangsangdomothanhandlename
 
-int allyear = 1, allmonth = 1, allday = 1;
-// 윤년 계산 안함 2월은 항상 28일
+int allyear = 1, allmonth = 1, allday = 1;		// 윤년 계산 안함 2월은 항상 28일
 
 typedef struct S_date {		//대출시 기록할 때 부터 반납일을 기록함
-	//책은 한번에 3권만 빌릴 수 있다.
 	int check;			//빌린 책의 권수 max=3
 	char ISBN[3][20];	//ISBN값으로 책 목록을 검색해서 책 정보를 출력
 	int year[3], month[3], day[3];
-	int late[3];		//늦게 반납하면 페널티로 late일동안 대출 불가
+	int late[3];
 } sdate;
 
 typedef struct S_birthday {
@@ -44,17 +41,19 @@ typedef struct S_book {
 void calender_sys(sperson *per, sbook *book);
 
 void add_person(sperson *per);						//회원정보 추가			--- 끝
-void del_person(sperson *per);						//회원정보 삭제			--- 끝
+void del_person();									//회원정보 삭제			--- 끝
 void print_person(sperson *per, sbook *book);		//회원정보 리스트 출력	--- 끝
 void find_person(sperson *per, sbook *book);		//회원정보 검색			--- 끝
 void add_book(sbook *book);							//책 추가				--- 끝
-void del_book(sbook *book);							//책 삭제				--- 끝
+void del_book();									//책 삭제				--- 끝
 void find_book(sperson *per, sbook *book);			//책 찾기				--- 끝
 void print_book(sbook *book);						//책 리스트 출력		--- 끝
 void borrowed_booklist_print(sbook *book);			//빌려진 책 리스트 출력	--- 끝
 void borrow_book(sperson *per, sbook *book);		//책 빌리기				--- 끝
 void return_book(sperson *per, sbook *book);		//책 반납하기			--- 끝
 
+void print_info();
+int admin_login();
 //회원 정보 수정하기
 //책 정보 수정하기
 
@@ -62,31 +61,92 @@ sperson personend, personhead;
 sbook bookend, bookhead;
 
 int main() {
-	int personnum = 5;
-	int booknum = 5;
 	personend.myper = NULL;
 	bookend.mybook = NULL;
-	sperson personlist[5] = {
-	{"joe", "010-1234-5678", "1960107", 1996,01,07, &personlist[1]},
-	{"elly", "010-1111-2222", "2030419", 2003,04,19, &personlist[2]},
-	{"mike", "010-3333-4444", "3991128", 1999,11,28, &personlist[3]},
-	{"cathy", "010-5555-6666", "4830311", 1983,03,11, &personlist[4]},
-	{"bang", "010-7777-8888", "5990419", 1999,04,19, &personend},
-	};
-	sbook booklist[5] = {
-	{0, "homo_sapiens", "yuval_noah_harari", "SSBN0001", &booklist[1]},
-	{0, "homo_deus", "yuval_noah_harari", "SSBN0002", &booklist[2]},
-	{0, "guns_germs_and_steel", "jared_mason_diamond", "SSBN0003", &booklist[3]},
-	{0, "cosmos", "carl_sagan", "SSBN0004", &booklist[4]},
-	{0, "les_miserables", "victor-marie_hugo", "SSBN0005", &bookend},
-	};
-	personhead.myper = &personlist[0];
-	bookhead.mybook = &booklist[0];
-	for(int i=0; i<personnum; i++) personlist[i].date.check = 0;
-	for (int i = 0; i < personnum; i++)
-		for (int j = 0; j < 3; j++)
-			personlist[i].date.late[j] = 0;
+	sperson *personlist1 = malloc(sizeof(sperson));
+	sperson *personlist2 = malloc(sizeof(sperson));
+	sperson *personlist3 = malloc(sizeof(sperson));
+	sperson *personlist4 = malloc(sizeof(sperson));
+	sperson *personlist5 = malloc(sizeof(sperson));
+	strcpy(personlist1->name, "joe"); strcpy(personlist1->phonenumber, "010-1234-5678"); strcpy(personlist1->pinnumber, "1960107");
+	strcpy(personlist2->name, "elly"); strcpy(personlist2->phonenumber, "010-1111-2222"); strcpy(personlist2->pinnumber, "2030419");
+	strcpy(personlist3->name, "mike"); strcpy(personlist3->phonenumber, "010-3333-4444"); strcpy(personlist3->pinnumber, "3991128");
+	strcpy(personlist4->name, "cathy"); strcpy(personlist4->phonenumber, "010-5555-6666"); strcpy(personlist4->pinnumber, "4830311");
+	strcpy(personlist5->name, "bang"); strcpy(personlist5->phonenumber, "010-7777-8888"); strcpy(personlist5->pinnumber, "5990419");
+	personlist1->birthday.year = 1996; personlist1->birthday.month = 01; personlist1->birthday.day = 07;
+	personlist2->birthday.year = 2003; personlist2->birthday.month = 04; personlist2->birthday.day = 19;
+	personlist3->birthday.year = 1999; personlist3->birthday.month = 11; personlist3->birthday.day = 28;
+	personlist4->birthday.year = 1993; personlist4->birthday.month = 03; personlist4->birthday.day = 11;
+	personlist5->birthday.year = 1999; personlist5->birthday.month = 04; personlist5->birthday.day = 19;
+	personlist1->date.check = 0; for (int i = 0; i < 3; i++) personlist1->date.late[i] = 0;
+	personlist2->date.check = 0; for (int i = 0; i < 3; i++) personlist2->date.late[i] = 0;
+	personlist3->date.check = 0; for (int i = 0; i < 3; i++) personlist3->date.late[i] = 0;
+	personlist4->date.check = 0; for (int i = 0; i < 3; i++) personlist4->date.late[i] = 0;
+	personlist5->date.check = 0; for (int i = 0; i < 3; i++) personlist5->date.late[i] = 0;
+	personhead.myper = personlist1;
+	personlist1->myper = personlist2;
+	personlist2->myper = personlist3;
+	personlist3->myper = personlist4;
+	personlist4->myper = personlist5;
+	personlist5->myper = &personend;
+	sbook *booklist1 = malloc(sizeof(sbook));
+	sbook *booklist2 = malloc(sizeof(sbook));
+	sbook *booklist3 = malloc(sizeof(sbook));
+	sbook *booklist4 = malloc(sizeof(sbook));
+	sbook *booklist5 = malloc(sizeof(sbook));
+	booklist1->state = 0; strcpy(booklist1->bookname, "homo_sapiens"); strcpy(booklist1->author, "yuval_noah_harari"); strcpy(booklist1->ISBN, "SSBN0001");
+	booklist2->state = 0; strcpy(booklist2->bookname, "homo_deus"); strcpy(booklist2->author, "yuval_noah_harari"); strcpy(booklist2->ISBN, "SSBN0002");
+	booklist3->state = 0; strcpy(booklist3->bookname, "guns_germs_and_steel"); strcpy(booklist3->author, "jared_mason_diamond"); strcpy(booklist3->ISBN, "SSBN0003");
+	booklist4->state = 0; strcpy(booklist4->bookname, "cosmos"); strcpy(booklist4->author, "carl_sagan"); strcpy(booklist4->ISBN, "SSBN0004");
+	booklist5->state = 0; strcpy(booklist5->bookname, "les_miserables"); strcpy(booklist5->author, "victor-marie_hugo"); strcpy(booklist5->ISBN, "SSBN0005");
+	bookhead.mybook = booklist1;
+	booklist1->mybook = booklist2;
+	booklist2->mybook = booklist3;
+	booklist3->mybook = booklist4;
+	booklist4->mybook = booklist5;
+	booklist5->mybook = &bookend;
 	printf("-----------------------------------\n");
+	print_info();
+	while (1) {
+		printf("명령을 입력하세요. : ");
+		int num;
+		scanf("%d", &num);
+		switch (num) {
+		case 1: add_person(personhead.myper); break;					//완성
+		case 2: del_person(); break;									//완성
+		case 3: print_person(personhead.myper, bookhead.mybook); break;	//완성
+		case 4: add_book(bookhead.mybook); break;						//완성
+		case 5: find_book(personhead.myper, bookhead.mybook); break;	//완성
+		case 6: print_book(bookhead.mybook); break;						//완성
+		case 7: find_book(personhead.myper, bookhead.mybook); break;	//완성
+		case 8: return_book(personhead.myper, bookhead.mybook); break;	//완성
+		case 9: del_book(); break;										//완성
+		case 10: find_person(personhead.myper, bookhead.mybook); break;	//완성
+		case 11: borrowed_booklist_print(bookhead.mybook); break;		//완성
+		case 1000: allday++; calender_sys(personhead.myper, bookhead.mybook);  break;	//완성
+		case 0: return 0;
+		default: {
+			printf("-----------------------------------\n");
+			printf("그런 명령은 없습니다.\n");
+			print_info();
+			break; 
+		}
+		}
+	}
+}
+
+int admin_login() {
+	char tmp[50];
+	printf("비밀번호를 입력해주세요.\n");
+	scanf("%s", tmp);
+	if (strcmp(password, tmp)) {
+		printf("비밀번호가 틀렸습니다.\n");
+		return 1;
+	}
+	else return 0;
+}
+
+void print_info() {
 	printf("관리자 기능은 관리자 비밀번호가 필요합니다.\n");
 	printf("1. 회원 추가하기\n");
 	printf("2. 회원 삭제하기 --- 관리자 기능\n");
@@ -102,86 +162,25 @@ int main() {
 	printf("1000. 날짜 1하루 증가시키기\n");
 	printf("0. 프로그램 끝내기\n");
 	printf("-----------------------------------\n");
-	while (1) {
-		printf("명령을 입력하세요. : ");
-		int num;
-		scanf("%d", &num);
-		switch (num) {
-		case 1: add_person(personhead.myper); break;					//완성
-		case 2: del_person(personhead.myper); break;					//완성
-		case 3: print_person(personhead.myper, bookhead.mybook); break;	//완성
-		case 4: add_book(bookhead.mybook); break;						//완성
-		case 5: find_book(personhead.myper, bookhead.mybook); break;	//완성
-		case 6: print_book(bookhead.mybook); break;						//완성
-		case 7: find_book(personhead.myper, bookhead.mybook); break;	//완성
-		case 8: return_book(personhead.myper, bookhead.mybook); break;	//완성
-		case 9: del_book(bookhead.mybook); break;						//완성
-		case 10: find_person(personhead.myper, bookhead.mybook); break;	//완성
-		case 11: borrowed_booklist_print(bookhead.mybook); break;		//완성
-		case 1000: allday++; calender_sys(personhead.myper, bookhead.mybook);  break;	//미완성
-		case 0: return 0;
-		default: {
-			printf("-----------------------------------\n");
-			printf("그런 명령은 없습니다.\n");
-			printf("관리자 기능은 관리자 비밀번호가 필요합니다.\n");
-			printf("1. 회원 추가하기\n");
-			printf("2. 회원 삭제하기 --- 관리자 기능\n");
-			printf("3. 회원 리스트 출력하기 --- 관리자 기능\n");
-			printf("4. 책 추가하기\n");
-			printf("5. 책 검색하기\n");
-			printf("6. 책 리스트 출력하기\n");
-			printf("7. 책 빌리기\n");
-			printf("8. 책 반납하기\n");
-			printf("9. 책 삭제하기 --- 관리자 기능\n");
-			printf("10. 회원 검색하기 --- 관리자 기능\n");
-			printf("11. 빌려진 책 목록 출력 --- 관리자 기능\n");
-			printf("1000. 날짜 1하루 증가시키기\n");
-			printf("0. 프로그램 끝내기\n");
-			printf("-----------------------------------\n");
-			break; 
-		}
-		}
-	}
 }
 
 void calender_sys(sperson *per, sbook *book) {		//날자의 증가와 반납시키기를 구현할 시스템
 	while (1) {
 		if (allmonth == 2) {
-			if (allday > 28) {
-				allmonth++;
-				allday -= 28;
-			}
-			if (allday < 29) {
-				break;
-			}
+			if (allday > 28) allmonth++; allday -= 28;
+			if (allday < 29) break;
 		}
 		else if (allmonth == 2 || allmonth == 4 || allmonth == 6 || allmonth == 9 || allmonth == 11) {
-			if (allday > 30) {
-				allmonth++;
-				allday -= 30;
-			}
-			if (allday < 31) {
-				break;
-			}
+			if (allday > 30) allmonth++; allday -= 30;
+			if (allday < 31) break;
 		}
 		else if (allmonth == 12) {
-			if (allday > 31) {
-				allmonth = 1;
-				allyear++;
-				allday -= 31;
-			}
-			if (allday < 32) {
-				break;
-			}
+			if (allday > 31) allmonth = 1; allyear++; allday -= 31;
+			if (allday < 32) break;
 		}
 		else {
-			if (allday > 31) {
-				allmonth++;
-				allday -= 31;
-			}
-			if (allday < 32) {
-				break;
-			}
+			if (allday > 31) allmonth++; allday -= 31;
+			if (allday < 32) break;
 		}
 	}
 	while (per->myper) {
@@ -241,24 +240,16 @@ void add_person(sperson *per) {		//완성
 	}
 }
 
-void del_person(sperson *per) {		//완성
-	char tmp[50];
-	printf("비밀번호를 입력해주세요.\n");
-	scanf("%s", tmp);
-	if (strcmp(password, tmp)) {
-		printf("비밀번호가 틀렸습니다.\n");
-		return;
-	}
+void del_person() {		//완성
+	if (admin_login()) return;
 	while (1) {
 		char pername[20];
 		printf("endl 을 입력하면 종료합니다.\n");
 		printf("삭제할 사람의 이름을 입력하세요. : ");
 		scanf("%s", pername);
-		if (!strcmp(pername, "endl")) {
-			break;
-		}
-		sperson *tmpperptr = per;
-		sperson *tmpper = NULL;
+		if (!strcmp(pername, "endl")) break;
+		sperson *tmpperptr = personhead.myper;
+		sperson *tmpper = &personhead;
 		int flag = 1;
 		while (tmpperptr->myper) {
 			if (!strcmp(tmpperptr->name, pername)) {
@@ -271,20 +262,12 @@ void del_person(sperson *per) {		//완성
 			tmpper = tmpperptr;
 			tmpperptr = tmpperptr->myper;
 		}
-		if (flag) {
-			printf("그런 사람은 없습니다. 다시 입력해 주세요.\n");
-		}
+		if (flag) printf("그런 사람은 없습니다. 다시 입력해 주세요.\n");
 	}
 }
 
 void print_person(sperson *per, sbook *book) {		//완성
-	char tmp[50];
-	printf("비밀번호를 입력해주세요.\n");
-	scanf("%s", tmp);
-	if (strcmp(password, tmp)) {
-		printf("비밀번호가 틀렸습니다.\n");
-		return;
-	}
+	if (admin_login()) return;
 	printf("-----------------------------------\n");
 	while (per->myper) {
 		printf("이름 : %s\n", per->name);
@@ -322,21 +305,13 @@ void print_person(sperson *per, sbook *book) {		//완성
 }
 
 void find_person(sperson *per, sbook *book) {		//완성
-	char tmp[50];
-	printf("비밀번호를 입력해주세요.\n");
-	scanf("%s", tmp);
-	if (strcmp(password, tmp)) {
-		printf("비밀번호가 틀렸습니다.\n");
-		return;
-	}
+	if (admin_login()) return;
 	while (1) {
 		char pername[20];
 		printf("endl 을 입력하면 종료합니다.\n");
 		printf("이름을 입력하세요. : ");
 		scanf("%s", pername);
-		if (!strcmp(pername, "endl")) {
-			break;
-		}
+		if (!strcmp(pername, "endl")) break;
 		sperson *tmpperptr = per;
 		int flag = 1;
 		while (tmpperptr->myper) {
@@ -374,9 +349,7 @@ void find_person(sperson *per, sbook *book) {		//완성
 			}
 			tmpperptr = tmpperptr->myper;
 		}
-		if (flag) {
-			printf("그런 사람은 없습니다. 다시 입력해 주세요.\n");
-		}
+		if (flag) printf("그런 사람은 없습니다. 다시 입력해 주세요.\n");
 	}
 }
 
@@ -408,24 +381,16 @@ void add_book(sbook *book) {		//완성
 	}
 }
 
-void del_book(sbook *book) {		//완성
-	char tmp[50];
-	printf("비밀번호를 입력해주세요.\n");
-	scanf("%s", tmp);
-	if (strcmp(password, tmp)) {
-		printf("비밀번호가 틀렸습니다.\n");
-		return;
-	}
+void del_book() {		//완성
+	if (admin_login()) return;
 	while (1) {
 		char bookname[20];
 		printf("endl 을 입력하면 종료합니다.\n");
 		printf("삭제할 책의 이름을 입력하세요. : ");
 		scanf("%s", bookname);
-		if (!strcmp(bookname, "endl")) {
-			break;
-		}
-		sbook *tmpbookptr = book;
-		sbook *tmpbook = NULL;
+		if (!strcmp(bookname, "endl")) break;
+		sbook *tmpbookptr = bookhead.mybook;
+		sbook *tmpbook = &bookhead;
 		int flag = 1;
 		while (tmpbookptr->mybook) {
 			if (!strcmp(tmpbookptr->bookname, bookname)) {
@@ -438,9 +403,7 @@ void del_book(sbook *book) {		//완성
 			tmpbook = tmpbookptr;
 			tmpbookptr = tmpbookptr->mybook;
 		}
-		if (flag) {
-			printf("그런 사람은 없습니다. 다시 입력해 주세요.\n");
-		}
+		if (flag) printf("그런 책은 없습니다. 다시 입력해 주세요.\n");
 	}
 }
 
@@ -472,9 +435,7 @@ void find_book(sperson *per, sbook *book) {		//완성
 		printf("endl 을 입력하면 종료합니다.\n");
 		printf("찾으실 책 이름을 입력하세요. : ");
 		scanf("%s", tmpbookname);
-		if (!strcmp(tmpbookname, "endl")) {
-			break;
-		}
+		if (!strcmp(tmpbookname, "endl")) break;
 		while (tmpbookptr->mybook) {
 			if (!strcmp(tmpbookname, tmpbookptr->bookname)) {
 				printf("ISBN CODE : %s\n", tmpbookptr->ISBN);
@@ -488,32 +449,20 @@ void find_book(sperson *per, sbook *book) {		//완성
 					char tmpc[4];
 					printf("책을 보유중입니다. 대출하시겠습니까? ( yes / no ) : ");
 					scanf("%s", tmpc);
-					if (!strcmp(tmpc, "yes")) {
-						borrow_book(per, tmpbookptr);
-					}
-					else if (strcmp(tmpc, "no")) {
-						printf("잘못 입력하셨습니다.\n");
-					}
+					if (!strcmp(tmpc, "yes")) borrow_book(per, tmpbookptr);
+					else if (strcmp(tmpc, "no")) printf("잘못 입력하셨습니다.\n");
 				}
 				flag = 0;
 				break;
 			}
 			tmpbookptr = tmpbookptr->mybook;
 		}
-		if (flag) {
-			printf("그런 책은 없습니다. 다시 입력해 주세요.\n");
-		}
+		if (flag) printf("그런 책은 없습니다. 다시 입력해 주세요.\n");
 	}
 }
 
 void borrowed_booklist_print(sbook *book) {		//완성
-	char tmp[50];
-	printf("비밀번호를 입력해주세요.\n");
-	scanf("%s", tmp);
-	if (strcmp(password, tmp)) {
-		printf("비밀번호가 틀렸습니다.\n");
-		return;
-	}
+	if (admin_login()) return;
 	printf("-----<빌려진 책 목록>-----\n");
 	printf("-----------------------------------\n");
 	int flag = 1;
@@ -529,9 +478,7 @@ void borrowed_booklist_print(sbook *book) {		//완성
 		}
 		book = book->mybook;
 	}
-	if (flag) {
-		printf("빌려진 책이 없습니다.\n");
-	}
+	if (flag) printf("빌려진 책이 없습니다.\n");
 }
 
 void borrow_book(sperson *per, sbook *book) {
@@ -540,9 +487,7 @@ void borrow_book(sperson *per, sbook *book) {
 		printf("endl 을 입력하면 종료합니다.\n");
 		printf("대출하실 회원의 이름을 입력하세요. : ");
 		scanf("%s", pername);
-		if (!strcmp(pername, "endl")) {
-			break;
-		}
+		if (!strcmp(pername, "endl")) break;
 		sperson *tmpperptr = per;
 		sbook *tmpbookptr = book;
 		while (tmpperptr->myper) {
@@ -564,41 +509,20 @@ void borrow_book(sperson *per, sbook *book) {
 						int tmpyear = allyear, tmpmonth = allmonth, tmpday = allday + 7;
 						while (1) {
 							if (tmpmonth == 2) {
-								if (tmpday > 28) {
-									tmpmonth++;
-									tmpday -= 28;
-								}
-								if (tmpday < 29) {
-									break;
-								}
+								if (tmpday > 28) tmpmonth++; tmpday -= 28;
+								if (tmpday < 29) break;
 							}
 							else if (tmpmonth == 2 || tmpmonth == 4 || tmpmonth == 6 || tmpmonth == 9 || tmpmonth == 11) {
-								if (tmpday > 30) {
-									tmpmonth++;
-									tmpday -= 30;
-								}
-								if (tmpday < 31) {
-									break;
-								}
+								if (tmpday > 30) tmpmonth++; tmpday -= 30;
+								if (tmpday < 31) break;
 							}
 							else if (tmpmonth == 12) {
-								if (tmpday > 31) {
-									tmpmonth = 1;
-									tmpyear++;
-									tmpday -= 31;
-								}
-								if (tmpday < 32) {
-									break;
-								}
+								if (tmpday > 31) tmpmonth = 1; tmpyear++; tmpday -= 31;
+								if (tmpday < 32) break;
 							}
 							else {
-								if (tmpday > 31) {
-									tmpmonth++;
-									tmpday -= 31;
-								}
-								if (tmpday < 32) {
-									break;
-								}
+								if (tmpday > 31) tmpmonth++; tmpday -= 31;
+								if (tmpday < 32) break;
 							}
 						}
 						printf("반납일은 %4d / %2d / %2d 입니다.\n", tmpyear, tmpmonth, tmpday);
@@ -634,15 +558,9 @@ void borrow_book(sperson *per, sbook *book) {
 		printf("그런 회원은 없습니다.\n회원 등록을 하시겠습니까? ( yes / no ) : ");
 		char tmpc[4];
 		scanf("%s", tmpc);
-		if (!strcmp(tmpc, "yes")) {
-			add_person(per);
-		}
-		else if (!strcmp(tmpc, "no")) {
-			printf("회원 등록을 하고 책을 빌려주세요.\n");
-		}
-		else {
-			printf("잘못 입력하셨습니다.\n");	
-		}
+		if (!strcmp(tmpc, "yes")) add_person(per);
+		else if (!strcmp(tmpc, "no")) printf("회원 등록을 하고 책을 빌려주세요.\n");
+		else printf("잘못 입력하셨습니다.\n");	
 	}
 }
 
@@ -652,9 +570,7 @@ void return_book(sperson *per, sbook *book) {
 		printf("endl 을 입력하면 종료합니다.\n");
 		printf("반납하실 회원의 이름을 입력하세요. : ");
 		scanf("%s", pername);
-		if (!strcmp(pername, "endl")) {
-			break;
-		}
+		if (!strcmp(pername, "endl")) break;
 		sperson *tmpperptr = per;
 		while (tmpperptr->myper) {
 			if (!strcmp(tmpperptr->name, pername)) {
@@ -674,9 +590,7 @@ void return_book(sperson *per, sbook *book) {
 					printf("endl 을 입력하면 종료합니다.\n");
 					printf("반납하실 책의 이름을 입력하세요. : ");
 					scanf("%s", tmpbook);
-					if (!strcmp(tmpbook, "endl")) {
-						break;
-					}
+					if (!strcmp(tmpbook, "endl")) break;
 					else {
 						sbook *tmpbookptr = book;
 						int flag = 1;
@@ -694,17 +608,13 @@ void return_book(sperson *per, sbook *book) {
 										tmpflag = 0;
 									}
 								}
-								if (tmpflag) {
-									printf("그런 책은 빌린적이 없습니다.\n");
-								}
+								if (tmpflag) printf("그런 책은 빌린적이 없습니다.\n");
 								flag = 0;
 								break;
 							}
 							tmpbookptr = tmpbookptr->mybook;
 						}
-						if (flag) {
-							printf("그런 책은 없습니다.\n");
-						}
+						if (flag) printf("그런 책은 없습니다.\n");
 					}
 				}
 			}
