@@ -60,51 +60,10 @@ int admin_login();
 sperson personend, personhead;
 sbook bookend, bookhead;
 
+void predataset();
+
 int main() {
-	personend.myper = NULL;
-	bookend.mybook = NULL;
-	sperson *personlist1 = malloc(sizeof(sperson));
-	sperson *personlist2 = malloc(sizeof(sperson));
-	sperson *personlist3 = malloc(sizeof(sperson));
-	sperson *personlist4 = malloc(sizeof(sperson));
-	sperson *personlist5 = malloc(sizeof(sperson));
-	strcpy(personlist1->name, "joe"); strcpy(personlist1->phonenumber, "010-1234-5678"); strcpy(personlist1->pinnumber, "1960107");
-	strcpy(personlist2->name, "elly"); strcpy(personlist2->phonenumber, "010-1111-2222"); strcpy(personlist2->pinnumber, "2030419");
-	strcpy(personlist3->name, "mike"); strcpy(personlist3->phonenumber, "010-3333-4444"); strcpy(personlist3->pinnumber, "3991128");
-	strcpy(personlist4->name, "cathy"); strcpy(personlist4->phonenumber, "010-5555-6666"); strcpy(personlist4->pinnumber, "4830311");
-	strcpy(personlist5->name, "bang"); strcpy(personlist5->phonenumber, "010-7777-8888"); strcpy(personlist5->pinnumber, "5990419");
-	personlist1->birthday.year = 1996; personlist1->birthday.month = 01; personlist1->birthday.day = 07;
-	personlist2->birthday.year = 2003; personlist2->birthday.month = 04; personlist2->birthday.day = 19;
-	personlist3->birthday.year = 1999; personlist3->birthday.month = 11; personlist3->birthday.day = 28;
-	personlist4->birthday.year = 1993; personlist4->birthday.month = 03; personlist4->birthday.day = 11;
-	personlist5->birthday.year = 1999; personlist5->birthday.month = 04; personlist5->birthday.day = 19;
-	personlist1->date.check = 0; for (int i = 0; i < 3; i++) personlist1->date.late[i] = 0;
-	personlist2->date.check = 0; for (int i = 0; i < 3; i++) personlist2->date.late[i] = 0;
-	personlist3->date.check = 0; for (int i = 0; i < 3; i++) personlist3->date.late[i] = 0;
-	personlist4->date.check = 0; for (int i = 0; i < 3; i++) personlist4->date.late[i] = 0;
-	personlist5->date.check = 0; for (int i = 0; i < 3; i++) personlist5->date.late[i] = 0;
-	personhead.myper = personlist1;
-	personlist1->myper = personlist2;
-	personlist2->myper = personlist3;
-	personlist3->myper = personlist4;
-	personlist4->myper = personlist5;
-	personlist5->myper = &personend;
-	sbook *booklist1 = malloc(sizeof(sbook));
-	sbook *booklist2 = malloc(sizeof(sbook));
-	sbook *booklist3 = malloc(sizeof(sbook));
-	sbook *booklist4 = malloc(sizeof(sbook));
-	sbook *booklist5 = malloc(sizeof(sbook));
-	booklist1->state = 0; strcpy(booklist1->bookname, "homo_sapiens"); strcpy(booklist1->author, "yuval_noah_harari"); strcpy(booklist1->ISBN, "SSBN0001");
-	booklist2->state = 0; strcpy(booklist2->bookname, "homo_deus"); strcpy(booklist2->author, "yuval_noah_harari"); strcpy(booklist2->ISBN, "SSBN0002");
-	booklist3->state = 0; strcpy(booklist3->bookname, "guns_germs_and_steel"); strcpy(booklist3->author, "jared_mason_diamond"); strcpy(booklist3->ISBN, "SSBN0003");
-	booklist4->state = 0; strcpy(booklist4->bookname, "cosmos"); strcpy(booklist4->author, "carl_sagan"); strcpy(booklist4->ISBN, "SSBN0004");
-	booklist5->state = 0; strcpy(booklist5->bookname, "les_miserables"); strcpy(booklist5->author, "victor-marie_hugo"); strcpy(booklist5->ISBN, "SSBN0005");
-	bookhead.mybook = booklist1;
-	booklist1->mybook = booklist2;
-	booklist2->mybook = booklist3;
-	booklist3->mybook = booklist4;
-	booklist4->mybook = booklist5;
-	booklist5->mybook = &bookend;
+	predataset();
 	printf("-----------------------------------\n");
 	print_info();
 	while (1) {
@@ -167,19 +126,32 @@ void print_info() {
 void calender_sys(sperson *per, sbook *book) {		//날자의 증가와 반납시키기를 구현할 시스템
 	while (1) {
 		if (allmonth == 2) {
-			if (allday > 28) allmonth++; allday -= 28;
+			if (allday > 28) {
+				allmonth++;
+				allday -= 28;
+			}
 			if (allday < 29) break;
 		}
 		else if (allmonth == 2 || allmonth == 4 || allmonth == 6 || allmonth == 9 || allmonth == 11) {
-			if (allday > 30) allmonth++; allday -= 30;
+			if (allday > 30) {
+				allmonth++;
+				allday -= 30;
+			}
 			if (allday < 31) break;
 		}
 		else if (allmonth == 12) {
-			if (allday > 31) allmonth = 1; allyear++; allday -= 31;
+			if (allday > 31) {
+				allmonth = 1;
+				allyear++;
+				allday -= 31;
+			}
 			if (allday < 32) break;
 		}
 		else {
-			if (allday > 31) allmonth++; allday -= 31;
+			if (allday > 31) {
+				allmonth++;
+				allday -= 31;
+			}
 			if (allday < 32) break;
 		}
 	}
@@ -509,19 +481,32 @@ void borrow_book(sperson *per, sbook *book) {
 						int tmpyear = allyear, tmpmonth = allmonth, tmpday = allday + 7;
 						while (1) {
 							if (tmpmonth == 2) {
-								if (tmpday > 28) tmpmonth++; tmpday -= 28;
+								if (tmpday > 28) {
+									tmpmonth++;
+									tmpday -= 28;
+								}
 								if (tmpday < 29) break;
 							}
 							else if (tmpmonth == 2 || tmpmonth == 4 || tmpmonth == 6 || tmpmonth == 9 || tmpmonth == 11) {
-								if (tmpday > 30) tmpmonth++; tmpday -= 30;
+								if (tmpday > 30) {
+									tmpmonth++;
+									tmpday -= 30;
+								}
 								if (tmpday < 31) break;
 							}
 							else if (tmpmonth == 12) {
-								if (tmpday > 31) tmpmonth = 1; tmpyear++; tmpday -= 31;
+								if (tmpday > 31) {
+									tmpmonth = 1;
+									tmpyear++;
+									tmpday -= 31;
+								}
 								if (tmpday < 32) break;
 							}
 							else {
-								if (tmpday > 31) tmpmonth++; tmpday -= 31;
+								if (tmpday > 31) {
+									tmpmonth++;
+									tmpday -= 31;
+								}
 								if (tmpday < 32) break;
 							}
 						}
@@ -599,7 +584,7 @@ void return_book(sperson *per, sbook *book) {
 								int tmpflag = 1;
 								for (int i = 0; i < 3; i++) {
 									if (tmpperptr->date.late[i] <= 0) continue;
-									if (!strcmp(tmpperptr->date.ISBN, tmpbookptr->ISBN)) {
+									if (!strcmp(tmpperptr->date.ISBN[i], tmpbookptr->ISBN)) {
 										printf("%s 책을 반납했습니다.\n", tmpbookptr->bookname);
 										tmpbookptr->state = 0;
 										tmpperptr->date.check--;
@@ -622,4 +607,51 @@ void return_book(sperson *per, sbook *book) {
 		}
 		printf("그런 회원은 없습니다.\n");
 	}
+}
+
+void predataset() {		//data를  free해주기 위해 동적할당으로 초기값 설정
+	personend.myper = NULL;
+	bookend.mybook = NULL;
+	sperson *personlist1 = malloc(sizeof(sperson));
+	sperson *personlist2 = malloc(sizeof(sperson));
+	sperson *personlist3 = malloc(sizeof(sperson));
+	sperson *personlist4 = malloc(sizeof(sperson));
+	sperson *personlist5 = malloc(sizeof(sperson));
+	strcpy(personlist1->name, "joe"); strcpy(personlist1->phonenumber, "010-1234-5678"); strcpy(personlist1->pinnumber, "1960107");
+	strcpy(personlist2->name, "elly"); strcpy(personlist2->phonenumber, "010-1111-2222"); strcpy(personlist2->pinnumber, "2030419");
+	strcpy(personlist3->name, "mike"); strcpy(personlist3->phonenumber, "010-3333-4444"); strcpy(personlist3->pinnumber, "3991128");
+	strcpy(personlist4->name, "cathy"); strcpy(personlist4->phonenumber, "010-5555-6666"); strcpy(personlist4->pinnumber, "4830311");
+	strcpy(personlist5->name, "bang"); strcpy(personlist5->phonenumber, "010-7777-8888"); strcpy(personlist5->pinnumber, "5990419");
+	personlist1->birthday.year = 1996; personlist1->birthday.month = 01; personlist1->birthday.day = 07;
+	personlist2->birthday.year = 2003; personlist2->birthday.month = 04; personlist2->birthday.day = 19;
+	personlist3->birthday.year = 1999; personlist3->birthday.month = 11; personlist3->birthday.day = 28;
+	personlist4->birthday.year = 1993; personlist4->birthday.month = 03; personlist4->birthday.day = 11;
+	personlist5->birthday.year = 1999; personlist5->birthday.month = 04; personlist5->birthday.day = 19;
+	personlist1->date.check = 0; for (int i = 0; i < 3; i++) personlist1->date.late[i] = 0;
+	personlist2->date.check = 0; for (int i = 0; i < 3; i++) personlist2->date.late[i] = 0;
+	personlist3->date.check = 0; for (int i = 0; i < 3; i++) personlist3->date.late[i] = 0;
+	personlist4->date.check = 0; for (int i = 0; i < 3; i++) personlist4->date.late[i] = 0;
+	personlist5->date.check = 0; for (int i = 0; i < 3; i++) personlist5->date.late[i] = 0;
+	personhead.myper = personlist1;
+	personlist1->myper = personlist2;
+	personlist2->myper = personlist3;
+	personlist3->myper = personlist4;
+	personlist4->myper = personlist5;
+	personlist5->myper = &personend;
+	sbook *booklist1 = malloc(sizeof(sbook));
+	sbook *booklist2 = malloc(sizeof(sbook));
+	sbook *booklist3 = malloc(sizeof(sbook));
+	sbook *booklist4 = malloc(sizeof(sbook));
+	sbook *booklist5 = malloc(sizeof(sbook));
+	booklist1->state = 0; strcpy(booklist1->bookname, "homo_sapiens"); strcpy(booklist1->author, "yuval_noah_harari"); strcpy(booklist1->ISBN, "SSBN0001");
+	booklist2->state = 0; strcpy(booklist2->bookname, "homo_deus"); strcpy(booklist2->author, "yuval_noah_harari"); strcpy(booklist2->ISBN, "SSBN0002");
+	booklist3->state = 0; strcpy(booklist3->bookname, "guns_germs_and_steel"); strcpy(booklist3->author, "jared_mason_diamond"); strcpy(booklist3->ISBN, "SSBN0003");
+	booklist4->state = 0; strcpy(booklist4->bookname, "cosmos"); strcpy(booklist4->author, "carl_sagan"); strcpy(booklist4->ISBN, "SSBN0004");
+	booklist5->state = 0; strcpy(booklist5->bookname, "les_miserables"); strcpy(booklist5->author, "victor-marie_hugo"); strcpy(booklist5->ISBN, "SSBN0005");
+	bookhead.mybook = booklist1;
+	booklist1->mybook = booklist2;
+	booklist2->mybook = booklist3;
+	booklist3->mybook = booklist4;
+	booklist4->mybook = booklist5;
+	booklist5->mybook = &bookend;
 }
