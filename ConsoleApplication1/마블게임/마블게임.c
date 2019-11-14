@@ -113,7 +113,6 @@ void print_board() {
 	printf("       ↑                                                                  │\n");
 	printf("       │                                                                   │\n");
 	printf("       │                                                                   │\n");
-	printf("       │                                                                   │\n");
 	printf("       │                                                                   ↓\n");
 	printf("┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐\n");
 	printf("│     %s", cityarr[4].cityname);

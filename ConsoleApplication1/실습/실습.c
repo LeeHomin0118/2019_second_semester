@@ -4,7 +4,70 @@
 #include <string.h>
 #include <time.h>
 
+int main() {
+	char *str[5];
+	for (int i = 0; i < 5; i++) {
+		char tmpstr[101];
+		fgets(tmpstr, 101, stdin);
+		tmpstr[strlen(tmpstr) - 1] = 0;
+		if (!strcmp(tmpstr, "end")) break;
+		str[i] = (char*)malloc(strlen(tmpstr) + 1);
+		strcpy(str[i], tmpstr);
+	}
+	for (int i = 0; i < 4; i++) {
+		for (int j = i; j < 5; j++) {
+			if (strcmp(str[i], str[j]) > 0) {
+				char *tmp = str[i];
+				str[i] = str[j];
+				str[j] = tmp;
+			}
+		}
+	}
+	for (int i = 0; i < 5; i++) {
+		printf("%03d : %s\n", i + 1, str[i]);
+	}
+}
+/*
+typedef struct S_student {
+	int num;
+	int kor;
+	int eng;
+	int math;
+} Sstudent;
 
+int main() {
+	printf("학생 수는 ? : ");
+	int n;
+	scanf("%d", &n);
+	Sstudent *stdptr = (Sstudent*)malloc(sizeof(Sstudent)*n);
+	printf("학번, 국어, 영어, 수학 순으로 데이터를 입력하세요.\n");
+	for (int i = 0; i < n; i++) {
+		scanf("%d %d %d %d", &stdptr[i].num, &stdptr[i].kor, &stdptr[i].eng, &stdptr[i].math);
+	}
+	for (int i = 0; i < n; i++) {
+		printf("학번 : %d\n국어 : %d\n영어 : %d\n수학 : %d\n\n", stdptr[i].num, stdptr[i].kor, stdptr[i].eng, stdptr[i].math);
+	}
+}
+*/
+/*
+int main() {
+	int cnt=0;
+	char *str[100];
+	while (1) {
+		char tmpstr[101];
+		fgets(tmpstr, 101, stdin);
+		tmpstr[strlen(tmpstr) - 1] = 0;
+		if (!strcmp(tmpstr, "end")) break;
+		str[cnt] = (char*)malloc(strlen(tmpstr) + 1);
+		strcpy(str[cnt], tmpstr);
+		cnt++;
+	}
+	for (int i = 0; i < cnt; i++) {
+		printf("%03d : %s\n", i + 1, str[i]);
+	}
+}
+*/
+/*
 typedef struct {
 	char name[10];
 	int kor;
@@ -44,7 +107,7 @@ int main() {
 		printf("%s %d %d %d\n", std[i].name, std[i].kor, std[i].eng, std[i].math);
 	}
 }
-
+*/
 /*
 typedef struct student {
 	int kor;
