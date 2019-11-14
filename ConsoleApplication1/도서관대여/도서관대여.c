@@ -219,6 +219,7 @@ void add_person(sperson *per) {		//완성
 	scanf("%2d", &month);
 	scanf("%2d", &day);
 	add_person_data(&personhead, name, phnnum, pinnum, year, month, day);
+	printf("추가되었습니다.\n");
 }
 
 void add_person_data(sperson *per, char *name, char *phnnum, char *pinnum, int year, int month, int day) {
@@ -226,7 +227,7 @@ void add_person_data(sperson *per, char *name, char *phnnum, char *pinnum, int y
 	while (1) {
 		if (per->myper == NULL) {
 			sperson *newperson;
-			newperson = malloc(sizeof(sperson));
+			newperson = (sperson*)malloc(sizeof(sperson));
 			if (newperson == NULL) {
 				printf("메모리 확보 실패\n");
 				exit(0);
@@ -355,6 +356,7 @@ void add_book(sbook *book) {		//완성
 	printf("ISBN을 입력하세요. : ");
 	scanf("%s", isbn);
 	add_book_data(&bookhead, bname, author, isbn);
+	printf("추가되었습니다.\n");
 }
 
 void add_book_data(sbook *book, char *bname, char *author, char *isbn) {
@@ -362,7 +364,7 @@ void add_book_data(sbook *book, char *bname, char *author, char *isbn) {
 	while (1) {
 		if (book->mybook == NULL) {
 			sbook *newbook;
-			newbook = malloc(sizeof(sbook));
+			newbook = (sbook*)malloc(sizeof(sbook));
 			if (newbook == NULL) {
 				printf("메모리 확보 실패\n");
 				exit(0);
