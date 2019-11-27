@@ -155,8 +155,8 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\OneDrive\문서\대학 강의\2019년 2학기\프로그래밍\11주차 테트리스\tetrisbattle\playerRand.c" />
-    <ClCompile Include="..\..\..\..\..\OneDrive\문서\대학 강의\2019년 2학기\프로그래밍\11주차 테트리스\tetrisbattle\TetrisBattlePlatform.c" />
+    <ClCompile Include="playerRand.c" />
+    <ClCompile Include="TetrisBattlePlatform.c" />
     <ClCompile Include="대전형테트리스.c" />
   </ItemGroup>
   <ItemGroup>
