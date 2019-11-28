@@ -5,6 +5,41 @@
 #include <time.h>
 
 int main() {
+	char *fname = "admin_birth.txt";
+	FILE *file = fopen(fname, "r");
+	int year, month, day;
+	if (file == NULL) {
+		file = fopen(fname, "w");
+		printf("관리자의 생일을 입력하시면 기억하겠습니다. ");
+		scanf("%d %d %d", &year, &month, &day);
+		fprintf(file, "%d %d %d", year, month, day);
+		fclose(file);
+		printf("관리자의 생일이 저장되었습니다. %4d년 %2d월 %2d일.", year, month, day);
+	}
+	else {
+		int tmpy, tmpm, tmpd;
+		fscanf(file, "%d %d %d", &year, &month, &day);
+		printf("관리자를 확인합니다. 생일을 입력하세요. ");
+		scanf("%d %d %d", &tmpy, &tmpm, &tmpd);
+		if (tmpy == year && tmpm == month && tmpd == day) printf("관리자님 안녕하세요.");
+		else printf("관리자가 아닙니다. 실행할 수 없습니다.");
+	}
+}
+/*
+int main() {
+	FILE *pFile;
+	char c;
+	pFile = fopen("alphabet.txt", "w");
+	if (pFile != NULL) {
+		for (c = 'A'; c <= 'Z'; c++)
+			fputc(c, pFile);
+		fclose(pFile);
+	}
+	return 0;
+}
+*/
+/*
+int main() {
 	char *str[5];
 	for (int i = 0; i < 5; i++) {
 		char tmpstr[101];
@@ -27,6 +62,7 @@ int main() {
 		printf("%03d : %s\n", i + 1, str[i]);
 	}
 }
+*/
 /*
 typedef struct S_student {
 	int num;
