@@ -124,14 +124,14 @@ int main() {
 	for (int i = 0; i < wordcnt; i++) {
 		if (wordlist[i].word[0] == tmp && !wordlist[i].used) {
 			printf("%s,%s\n", wordlist[i].word, wordlist[i].mean);
-			cscr += strlen(wordlist[i].word);
 			wordlist[i].used = 1;
 			tmp = wordlist[i].word[strlen(wordlist[i].word) - 1];
 			break;
 		}
 	}
 	while (1) {
-		tmp = computer_turn(tmp);
 		tmp = player_turn(tmp, 1);
+		tmp = computer_turn(tmp);
 	}
+	fclose(fp1);
 }

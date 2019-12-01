@@ -4,31 +4,22 @@
 #include <string.h>
 #include <time.h>
 
-typedef struct S_word {
-	char* word;
-	char* mean;
-} sword;
+char *key[34] = { "auto", "break", "case", "char", "const", "continue", "default", "do", "double", "else", "enum", "extern", "float", "for", "goto", "if", "inline", "int", "long", "register", "restrict", "return", "short", "signed", "sizeof", "static", "struct", "switch", "typedef", "union", "unsigned", "void", "volatile", "while" };
 
 int main() {
 	FILE *fp1;
-	char *str;
-	sword wordlist[52000];
-	if ((fp1 = fopen("dict_test.TXT", "r")) == NULL) {
+	char str[10000];
+
+	if ((fp1 = fopen("myprog.c", "r")) == NULL) {    //fail to open file for read
 		printf("fale to open file.");
 		return 0;
 	}
-	int cnt = 0;
-	while (fgets(str, 1000, fp1)) {
-		char *token = strtok(str, ":");
-		token[strlen(token)] = NULL;
-		int len = strlen(token);
-		if (!(len >= 4 && len <= 10)) { continue; }
-		strcpy(wordlist[cnt].word, token);
-		token = strtok(NULL, ":");
-		strcpy(wordlist[cnt].mean, token);
-		cnt++;
-	}
-	for (int i = 0; i < cnt; i++) {
-		printf("%s %s\n", wordlist[i].word, wordlist[i].mean);
+
+	const char delimiters[] = " \n\t";
+
+	while (fgets(str, sizeof(str), fp1)) {
+		for (int i = 0; i < 34; i++) {
+
+		}
 	}
 }
