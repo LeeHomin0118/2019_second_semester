@@ -10,16 +10,46 @@ int main() {
 	FILE *fp1;
 	char str[10000];
 
-	if ((fp1 = fopen("myprog.c", "r")) == NULL) {    //fail to open file for read
+	if ((fp1 = fopen("myprog.c", "r")) == NULL) {
 		printf("fale to open file.");
 		return 0;
 	}
-
-	const char delimiters[] = " \n\t";
-
-	while (fgets(str, sizeof(str), fp1)) {
-		for (int i = 0; i < 34; i++) {
-
+	char tmpc;
+	int ck = 0;
+	int flag = 0;
+	while (!feof(fp1)) {
+		tmpc = fgetc(fp1);
+		if (tmpc == '"' && flag==0) {
+			str[ck++] = tmpc;
+			str[ck] = NULL;
+			flag = 1;
+			continue;
+		}
+		if (tmpc == '"' && flag == 1) {
+			printf("%s", str);
+			ck = 0;
+			str[ck] = NULL;
+			printf("%c", tmpc);
+			flag = 0;
+			continue;
+		}
+		if (!(tmpc >= 'a'&&tmpc <= 'z')) {
+			printf("%s", str);
+			ck = 0;
+			str[ck] = NULL;
+			printf("%c", tmpc);
+		}
+		else {
+			str[ck++] = tmpc;
+			str[ck] = NULL;
+			for (int i = 0; i < 34; i++) {
+				if (!strcmp(str, key[i])) {
+					printf("(%s)", str);
+					ck = 0;
+					str[ck] = NULL;
+					break;
+				}
+			}
 		}
 	}
 }
