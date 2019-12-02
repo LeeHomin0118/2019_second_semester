@@ -7,6 +7,12 @@
 typedef unsigned int uint;
 typedef unsigned short ushort;
 
+int int0, inta, intA, int_, intint, aintint;
+int* int0, inta, intA, int_, intint, aintint;
+
+// test text int int ;
+/*test text int int */
+
 #pragma pack(push, 1)
 typedef struct LOCAL_FILE_HEADER {
 	uint signature;
