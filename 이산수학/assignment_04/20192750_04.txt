@@ -1,0 +1,1032 @@
+[0001] ©ª
+[0002] a
+[0003] b
+[0004] a, b
+[0005] c
+[0006] a, c
+[0007] b, c
+[0008] a, b, c
+[0009] d
+[0010] a, d
+[0011] b, d
+[0012] a, b, d
+[0013] c, d
+[0014] a, c, d
+[0015] b, c, d
+[0016] a, b, c, d
+[0017] e
+[0018] a, e
+[0019] b, e
+[0020] a, b, e
+[0021] c, e
+[0022] a, c, e
+[0023] b, c, e
+[0024] a, b, c, e
+[0025] d, e
+[0026] a, d, e
+[0027] b, d, e
+[0028] a, b, d, e
+[0029] c, d, e
+[0030] a, c, d, e
+[0031] b, c, d, e
+[0032] a, b, c, d, e
+[0033] f
+[0034] a, f
+[0035] b, f
+[0036] a, b, f
+[0037] c, f
+[0038] a, c, f
+[0039] b, c, f
+[0040] a, b, c, f
+[0041] d, f
+[0042] a, d, f
+[0043] b, d, f
+[0044] a, b, d, f
+[0045] c, d, f
+[0046] a, c, d, f
+[0047] b, c, d, f
+[0048] a, b, c, d, f
+[0049] e, f
+[0050] a, e, f
+[0051] b, e, f
+[0052] a, b, e, f
+[0053] c, e, f
+[0054] a, c, e, f
+[0055] b, c, e, f
+[0056] a, b, c, e, f
+[0057] d, e, f
+[0058] a, d, e, f
+[0059] b, d, e, f
+[0060] a, b, d, e, f
+[0061] c, d, e, f
+[0062] a, c, d, e, f
+[0063] b, c, d, e, f
+[0064] a, b, c, d, e, f
+[0065] g
+[0066] a, g
+[0067] b, g
+[0068] a, b, g
+[0069] c, g
+[0070] a, c, g
+[0071] b, c, g
+[0072] a, b, c, g
+[0073] d, g
+[0074] a, d, g
+[0075] b, d, g
+[0076] a, b, d, g
+[0077] c, d, g
+[0078] a, c, d, g
+[0079] b, c, d, g
+[0080] a, b, c, d, g
+[0081] e, g
+[0082] a, e, g
+[0083] b, e, g
+[0084] a, b, e, g
+[0085] c, e, g
+[0086] a, c, e, g
+[0087] b, c, e, g
+[0088] a, b, c, e, g
+[0089] d, e, g
+[0090] a, d, e, g
+[0091] b, d, e, g
+[0092] a, b, d, e, g
+[0093] c, d, e, g
+[0094] a, c, d, e, g
+[0095] b, c, d, e, g
+[0096] a, b, c, d, e, g
+[0097] f, g
+[0098] a, f, g
+[0099] b, f, g
+[0100] a, b, f, g
+[0101] c, f, g
+[0102] a, c, f, g
+[0103] b, c, f, g
+[0104] a, b, c, f, g
+[0105] d, f, g
+[0106] a, d, f, g
+[0107] b, d, f, g
+[0108] a, b, d, f, g
+[0109] c, d, f, g
+[0110] a, c, d, f, g
+[0111] b, c, d, f, g
+[0112] a, b, c, d, f, g
+[0113] e, f, g
+[0114] a, e, f, g
+[0115] b, e, f, g
+[0116] a, b, e, f, g
+[0117] c, e, f, g
+[0118] a, c, e, f, g
+[0119] b, c, e, f, g
+[0120] a, b, c, e, f, g
+[0121] d, e, f, g
+[0122] a, d, e, f, g
+[0123] b, d, e, f, g
+[0124] a, b, d, e, f, g
+[0125] c, d, e, f, g
+[0126] a, c, d, e, f, g
+[0127] b, c, d, e, f, g
+[0128] a, b, c, d, e, f, g
+[0129] h
+[0130] a, h
+[0131] b, h
+[0132] a, b, h
+[0133] c, h
+[0134] a, c, h
+[0135] b, c, h
+[0136] a, b, c, h
+[0137] d, h
+[0138] a, d, h
+[0139] b, d, h
+[0140] a, b, d, h
+[0141] c, d, h
+[0142] a, c, d, h
+[0143] b, c, d, h
+[0144] a, b, c, d, h
+[0145] e, h
+[0146] a, e, h
+[0147] b, e, h
+[0148] a, b, e, h
+[0149] c, e, h
+[0150] a, c, e, h
+[0151] b, c, e, h
+[0152] a, b, c, e, h
+[0153] d, e, h
+[0154] a, d, e, h
+[0155] b, d, e, h
+[0156] a, b, d, e, h
+[0157] c, d, e, h
+[0158] a, c, d, e, h
+[0159] b, c, d, e, h
+[0160] a, b, c, d, e, h
+[0161] f, h
+[0162] a, f, h
+[0163] b, f, h
+[0164] a, b, f, h
+[0165] c, f, h
+[0166] a, c, f, h
+[0167] b, c, f, h
+[0168] a, b, c, f, h
+[0169] d, f, h
+[0170] a, d, f, h
+[0171] b, d, f, h
+[0172] a, b, d, f, h
+[0173] c, d, f, h
+[0174] a, c, d, f, h
+[0175] b, c, d, f, h
+[0176] a, b, c, d, f, h
+[0177] e, f, h
+[0178] a, e, f, h
+[0179] b, e, f, h
+[0180] a, b, e, f, h
+[0181] c, e, f, h
+[0182] a, c, e, f, h
+[0183] b, c, e, f, h
+[0184] a, b, c, e, f, h
+[0185] d, e, f, h
+[0186] a, d, e, f, h
+[0187] b, d, e, f, h
+[0188] a, b, d, e, f, h
+[0189] c, d, e, f, h
+[0190] a, c, d, e, f, h
+[0191] b, c, d, e, f, h
+[0192] a, b, c, d, e, f, h
+[0193] g, h
+[0194] a, g, h
+[0195] b, g, h
+[0196] a, b, g, h
+[0197] c, g, h
+[0198] a, c, g, h
+[0199] b, c, g, h
+[0200] a, b, c, g, h
+[0201] d, g, h
+[0202] a, d, g, h
+[0203] b, d, g, h
+[0204] a, b, d, g, h
+[0205] c, d, g, h
+[0206] a, c, d, g, h
+[0207] b, c, d, g, h
+[0208] a, b, c, d, g, h
+[0209] e, g, h
+[0210] a, e, g, h
+[0211] b, e, g, h
+[0212] a, b, e, g, h
+[0213] c, e, g, h
+[0214] a, c, e, g, h
+[0215] b, c, e, g, h
+[0216] a, b, c, e, g, h
+[0217] d, e, g, h
+[0218] a, d, e, g, h
+[0219] b, d, e, g, h
+[0220] a, b, d, e, g, h
+[0221] c, d, e, g, h
+[0222] a, c, d, e, g, h
+[0223] b, c, d, e, g, h
+[0224] a, b, c, d, e, g, h
+[0225] f, g, h
+[0226] a, f, g, h
+[0227] b, f, g, h
+[0228] a, b, f, g, h
+[0229] c, f, g, h
+[0230] a, c, f, g, h
+[0231] b, c, f, g, h
+[0232] a, b, c, f, g, h
+[0233] d, f, g, h
+[0234] a, d, f, g, h
+[0235] b, d, f, g, h
+[0236] a, b, d, f, g, h
+[0237] c, d, f, g, h
+[0238] a, c, d, f, g, h
+[0239] b, c, d, f, g, h
+[0240] a, b, c, d, f, g, h
+[0241] e, f, g, h
+[0242] a, e, f, g, h
+[0243] b, e, f, g, h
+[0244] a, b, e, f, g, h
+[0245] c, e, f, g, h
+[0246] a, c, e, f, g, h
+[0247] b, c, e, f, g, h
+[0248] a, b, c, e, f, g, h
+[0249] d, e, f, g, h
+[0250] a, d, e, f, g, h
+[0251] b, d, e, f, g, h
+[0252] a, b, d, e, f, g, h
+[0253] c, d, e, f, g, h
+[0254] a, c, d, e, f, g, h
+[0255] b, c, d, e, f, g, h
+[0256] a, b, c, d, e, f, g, h
+[0257] i
+[0258] a, i
+[0259] b, i
+[0260] a, b, i
+[0261] c, i
+[0262] a, c, i
+[0263] b, c, i
+[0264] a, b, c, i
+[0265] d, i
+[0266] a, d, i
+[0267] b, d, i
+[0268] a, b, d, i
+[0269] c, d, i
+[0270] a, c, d, i
+[0271] b, c, d, i
+[0272] a, b, c, d, i
+[0273] e, i
+[0274] a, e, i
+[0275] b, e, i
+[0276] a, b, e, i
+[0277] c, e, i
+[0278] a, c, e, i
+[0279] b, c, e, i
+[0280] a, b, c, e, i
+[0281] d, e, i
+[0282] a, d, e, i
+[0283] b, d, e, i
+[0284] a, b, d, e, i
+[0285] c, d, e, i
+[0286] a, c, d, e, i
+[0287] b, c, d, e, i
+[0288] a, b, c, d, e, i
+[0289] f, i
+[0290] a, f, i
+[0291] b, f, i
+[0292] a, b, f, i
+[0293] c, f, i
+[0294] a, c, f, i
+[0295] b, c, f, i
+[0296] a, b, c, f, i
+[0297] d, f, i
+[0298] a, d, f, i
+[0299] b, d, f, i
+[0300] a, b, d, f, i
+[0301] c, d, f, i
+[0302] a, c, d, f, i
+[0303] b, c, d, f, i
+[0304] a, b, c, d, f, i
+[0305] e, f, i
+[0306] a, e, f, i
+[0307] b, e, f, i
+[0308] a, b, e, f, i
+[0309] c, e, f, i
+[0310] a, c, e, f, i
+[0311] b, c, e, f, i
+[0312] a, b, c, e, f, i
+[0313] d, e, f, i
+[0314] a, d, e, f, i
+[0315] b, d, e, f, i
+[0316] a, b, d, e, f, i
+[0317] c, d, e, f, i
+[0318] a, c, d, e, f, i
+[0319] b, c, d, e, f, i
+[0320] a, b, c, d, e, f, i
+[0321] g, i
+[0322] a, g, i
+[0323] b, g, i
+[0324] a, b, g, i
+[0325] c, g, i
+[0326] a, c, g, i
+[0327] b, c, g, i
+[0328] a, b, c, g, i
+[0329] d, g, i
+[0330] a, d, g, i
+[0331] b, d, g, i
+[0332] a, b, d, g, i
+[0333] c, d, g, i
+[0334] a, c, d, g, i
+[0335] b, c, d, g, i
+[0336] a, b, c, d, g, i
+[0337] e, g, i
+[0338] a, e, g, i
+[0339] b, e, g, i
+[0340] a, b, e, g, i
+[0341] c, e, g, i
+[0342] a, c, e, g, i
+[0343] b, c, e, g, i
+[0344] a, b, c, e, g, i
+[0345] d, e, g, i
+[0346] a, d, e, g, i
+[0347] b, d, e, g, i
+[0348] a, b, d, e, g, i
+[0349] c, d, e, g, i
+[0350] a, c, d, e, g, i
+[0351] b, c, d, e, g, i
+[0352] a, b, c, d, e, g, i
+[0353] f, g, i
+[0354] a, f, g, i
+[0355] b, f, g, i
+[0356] a, b, f, g, i
+[0357] c, f, g, i
+[0358] a, c, f, g, i
+[0359] b, c, f, g, i
+[0360] a, b, c, f, g, i
+[0361] d, f, g, i
+[0362] a, d, f, g, i
+[0363] b, d, f, g, i
+[0364] a, b, d, f, g, i
+[0365] c, d, f, g, i
+[0366] a, c, d, f, g, i
+[0367] b, c, d, f, g, i
+[0368] a, b, c, d, f, g, i
+[0369] e, f, g, i
+[0370] a, e, f, g, i
+[0371] b, e, f, g, i
+[0372] a, b, e, f, g, i
+[0373] c, e, f, g, i
+[0374] a, c, e, f, g, i
+[0375] b, c, e, f, g, i
+[0376] a, b, c, e, f, g, i
+[0377] d, e, f, g, i
+[0378] a, d, e, f, g, i
+[0379] b, d, e, f, g, i
+[0380] a, b, d, e, f, g, i
+[0381] c, d, e, f, g, i
+[0382] a, c, d, e, f, g, i
+[0383] b, c, d, e, f, g, i
+[0384] a, b, c, d, e, f, g, i
+[0385] h, i
+[0386] a, h, i
+[0387] b, h, i
+[0388] a, b, h, i
+[0389] c, h, i
+[0390] a, c, h, i
+[0391] b, c, h, i
+[0392] a, b, c, h, i
+[0393] d, h, i
+[0394] a, d, h, i
+[0395] b, d, h, i
+[0396] a, b, d, h, i
+[0397] c, d, h, i
+[0398] a, c, d, h, i
+[0399] b, c, d, h, i
+[0400] a, b, c, d, h, i
+[0401] e, h, i
+[0402] a, e, h, i
+[0403] b, e, h, i
+[0404] a, b, e, h, i
+[0405] c, e, h, i
+[0406] a, c, e, h, i
+[0407] b, c, e, h, i
+[0408] a, b, c, e, h, i
+[0409] d, e, h, i
+[0410] a, d, e, h, i
+[0411] b, d, e, h, i
+[0412] a, b, d, e, h, i
+[0413] c, d, e, h, i
+[0414] a, c, d, e, h, i
+[0415] b, c, d, e, h, i
+[0416] a, b, c, d, e, h, i
+[0417] f, h, i
+[0418] a, f, h, i
+[0419] b, f, h, i
+[0420] a, b, f, h, i
+[0421] c, f, h, i
+[0422] a, c, f, h, i
+[0423] b, c, f, h, i
+[0424] a, b, c, f, h, i
+[0425] d, f, h, i
+[0426] a, d, f, h, i
+[0427] b, d, f, h, i
+[0428] a, b, d, f, h, i
+[0429] c, d, f, h, i
+[0430] a, c, d, f, h, i
+[0431] b, c, d, f, h, i
+[0432] a, b, c, d, f, h, i
+[0433] e, f, h, i
+[0434] a, e, f, h, i
+[0435] b, e, f, h, i
+[0436] a, b, e, f, h, i
+[0437] c, e, f, h, i
+[0438] a, c, e, f, h, i
+[0439] b, c, e, f, h, i
+[0440] a, b, c, e, f, h, i
+[0441] d, e, f, h, i
+[0442] a, d, e, f, h, i
+[0443] b, d, e, f, h, i
+[0444] a, b, d, e, f, h, i
+[0445] c, d, e, f, h, i
+[0446] a, c, d, e, f, h, i
+[0447] b, c, d, e, f, h, i
+[0448] a, b, c, d, e, f, h, i
+[0449] g, h, i
+[0450] a, g, h, i
+[0451] b, g, h, i
+[0452] a, b, g, h, i
+[0453] c, g, h, i
+[0454] a, c, g, h, i
+[0455] b, c, g, h, i
+[0456] a, b, c, g, h, i
+[0457] d, g, h, i
+[0458] a, d, g, h, i
+[0459] b, d, g, h, i
+[0460] a, b, d, g, h, i
+[0461] c, d, g, h, i
+[0462] a, c, d, g, h, i
+[0463] b, c, d, g, h, i
+[0464] a, b, c, d, g, h, i
+[0465] e, g, h, i
+[0466] a, e, g, h, i
+[0467] b, e, g, h, i
+[0468] a, b, e, g, h, i
+[0469] c, e, g, h, i
+[0470] a, c, e, g, h, i
+[0471] b, c, e, g, h, i
+[0472] a, b, c, e, g, h, i
+[0473] d, e, g, h, i
+[0474] a, d, e, g, h, i
+[0475] b, d, e, g, h, i
+[0476] a, b, d, e, g, h, i
+[0477] c, d, e, g, h, i
+[0478] a, c, d, e, g, h, i
+[0479] b, c, d, e, g, h, i
+[0480] a, b, c, d, e, g, h, i
+[0481] f, g, h, i
+[0482] a, f, g, h, i
+[0483] b, f, g, h, i
+[0484] a, b, f, g, h, i
+[0485] c, f, g, h, i
+[0486] a, c, f, g, h, i
+[0487] b, c, f, g, h, i
+[0488] a, b, c, f, g, h, i
+[0489] d, f, g, h, i
+[0490] a, d, f, g, h, i
+[0491] b, d, f, g, h, i
+[0492] a, b, d, f, g, h, i
+[0493] c, d, f, g, h, i
+[0494] a, c, d, f, g, h, i
+[0495] b, c, d, f, g, h, i
+[0496] a, b, c, d, f, g, h, i
+[0497] e, f, g, h, i
+[0498] a, e, f, g, h, i
+[0499] b, e, f, g, h, i
+[0500] a, b, e, f, g, h, i
+[0501] c, e, f, g, h, i
+[0502] a, c, e, f, g, h, i
+[0503] b, c, e, f, g, h, i
+[0504] a, b, c, e, f, g, h, i
+[0505] d, e, f, g, h, i
+[0506] a, d, e, f, g, h, i
+[0507] b, d, e, f, g, h, i
+[0508] a, b, d, e, f, g, h, i
+[0509] c, d, e, f, g, h, i
+[0510] a, c, d, e, f, g, h, i
+[0511] b, c, d, e, f, g, h, i
+[0512] a, b, c, d, e, f, g, h, i
+[0513] j
+[0514] a, j
+[0515] b, j
+[0516] a, b, j
+[0517] c, j
+[0518] a, c, j
+[0519] b, c, j
+[0520] a, b, c, j
+[0521] d, j
+[0522] a, d, j
+[0523] b, d, j
+[0524] a, b, d, j
+[0525] c, d, j
+[0526] a, c, d, j
+[0527] b, c, d, j
+[0528] a, b, c, d, j
+[0529] e, j
+[0530] a, e, j
+[0531] b, e, j
+[0532] a, b, e, j
+[0533] c, e, j
+[0534] a, c, e, j
+[0535] b, c, e, j
+[0536] a, b, c, e, j
+[0537] d, e, j
+[0538] a, d, e, j
+[0539] b, d, e, j
+[0540] a, b, d, e, j
+[0541] c, d, e, j
+[0542] a, c, d, e, j
+[0543] b, c, d, e, j
+[0544] a, b, c, d, e, j
+[0545] f, j
+[0546] a, f, j
+[0547] b, f, j
+[0548] a, b, f, j
+[0549] c, f, j
+[0550] a, c, f, j
+[0551] b, c, f, j
+[0552] a, b, c, f, j
+[0553] d, f, j
+[0554] a, d, f, j
+[0555] b, d, f, j
+[0556] a, b, d, f, j
+[0557] c, d, f, j
+[0558] a, c, d, f, j
+[0559] b, c, d, f, j
+[0560] a, b, c, d, f, j
+[0561] e, f, j
+[0562] a, e, f, j
+[0563] b, e, f, j
+[0564] a, b, e, f, j
+[0565] c, e, f, j
+[0566] a, c, e, f, j
+[0567] b, c, e, f, j
+[0568] a, b, c, e, f, j
+[0569] d, e, f, j
+[0570] a, d, e, f, j
+[0571] b, d, e, f, j
+[0572] a, b, d, e, f, j
+[0573] c, d, e, f, j
+[0574] a, c, d, e, f, j
+[0575] b, c, d, e, f, j
+[0576] a, b, c, d, e, f, j
+[0577] g, j
+[0578] a, g, j
+[0579] b, g, j
+[0580] a, b, g, j
+[0581] c, g, j
+[0582] a, c, g, j
+[0583] b, c, g, j
+[0584] a, b, c, g, j
+[0585] d, g, j
+[0586] a, d, g, j
+[0587] b, d, g, j
+[0588] a, b, d, g, j
+[0589] c, d, g, j
+[0590] a, c, d, g, j
+[0591] b, c, d, g, j
+[0592] a, b, c, d, g, j
+[0593] e, g, j
+[0594] a, e, g, j
+[0595] b, e, g, j
+[0596] a, b, e, g, j
+[0597] c, e, g, j
+[0598] a, c, e, g, j
+[0599] b, c, e, g, j
+[0600] a, b, c, e, g, j
+[0601] d, e, g, j
+[0602] a, d, e, g, j
+[0603] b, d, e, g, j
+[0604] a, b, d, e, g, j
+[0605] c, d, e, g, j
+[0606] a, c, d, e, g, j
+[0607] b, c, d, e, g, j
+[0608] a, b, c, d, e, g, j
+[0609] f, g, j
+[0610] a, f, g, j
+[0611] b, f, g, j
+[0612] a, b, f, g, j
+[0613] c, f, g, j
+[0614] a, c, f, g, j
+[0615] b, c, f, g, j
+[0616] a, b, c, f, g, j
+[0617] d, f, g, j
+[0618] a, d, f, g, j
+[0619] b, d, f, g, j
+[0620] a, b, d, f, g, j
+[0621] c, d, f, g, j
+[0622] a, c, d, f, g, j
+[0623] b, c, d, f, g, j
+[0624] a, b, c, d, f, g, j
+[0625] e, f, g, j
+[0626] a, e, f, g, j
+[0627] b, e, f, g, j
+[0628] a, b, e, f, g, j
+[0629] c, e, f, g, j
+[0630] a, c, e, f, g, j
+[0631] b, c, e, f, g, j
+[0632] a, b, c, e, f, g, j
+[0633] d, e, f, g, j
+[0634] a, d, e, f, g, j
+[0635] b, d, e, f, g, j
+[0636] a, b, d, e, f, g, j
+[0637] c, d, e, f, g, j
+[0638] a, c, d, e, f, g, j
+[0639] b, c, d, e, f, g, j
+[0640] a, b, c, d, e, f, g, j
+[0641] h, j
+[0642] a, h, j
+[0643] b, h, j
+[0644] a, b, h, j
+[0645] c, h, j
+[0646] a, c, h, j
+[0647] b, c, h, j
+[0648] a, b, c, h, j
+[0649] d, h, j
+[0650] a, d, h, j
+[0651] b, d, h, j
+[0652] a, b, d, h, j
+[0653] c, d, h, j
+[0654] a, c, d, h, j
+[0655] b, c, d, h, j
+[0656] a, b, c, d, h, j
+[0657] e, h, j
+[0658] a, e, h, j
+[0659] b, e, h, j
+[0660] a, b, e, h, j
+[0661] c, e, h, j
+[0662] a, c, e, h, j
+[0663] b, c, e, h, j
+[0664] a, b, c, e, h, j
+[0665] d, e, h, j
+[0666] a, d, e, h, j
+[0667] b, d, e, h, j
+[0668] a, b, d, e, h, j
+[0669] c, d, e, h, j
+[0670] a, c, d, e, h, j
+[0671] b, c, d, e, h, j
+[0672] a, b, c, d, e, h, j
+[0673] f, h, j
+[0674] a, f, h, j
+[0675] b, f, h, j
+[0676] a, b, f, h, j
+[0677] c, f, h, j
+[0678] a, c, f, h, j
+[0679] b, c, f, h, j
+[0680] a, b, c, f, h, j
+[0681] d, f, h, j
+[0682] a, d, f, h, j
+[0683] b, d, f, h, j
+[0684] a, b, d, f, h, j
+[0685] c, d, f, h, j
+[0686] a, c, d, f, h, j
+[0687] b, c, d, f, h, j
+[0688] a, b, c, d, f, h, j
+[0689] e, f, h, j
+[0690] a, e, f, h, j
+[0691] b, e, f, h, j
+[0692] a, b, e, f, h, j
+[0693] c, e, f, h, j
+[0694] a, c, e, f, h, j
+[0695] b, c, e, f, h, j
+[0696] a, b, c, e, f, h, j
+[0697] d, e, f, h, j
+[0698] a, d, e, f, h, j
+[0699] b, d, e, f, h, j
+[0700] a, b, d, e, f, h, j
+[0701] c, d, e, f, h, j
+[0702] a, c, d, e, f, h, j
+[0703] b, c, d, e, f, h, j
+[0704] a, b, c, d, e, f, h, j
+[0705] g, h, j
+[0706] a, g, h, j
+[0707] b, g, h, j
+[0708] a, b, g, h, j
+[0709] c, g, h, j
+[0710] a, c, g, h, j
+[0711] b, c, g, h, j
+[0712] a, b, c, g, h, j
+[0713] d, g, h, j
+[0714] a, d, g, h, j
+[0715] b, d, g, h, j
+[0716] a, b, d, g, h, j
+[0717] c, d, g, h, j
+[0718] a, c, d, g, h, j
+[0719] b, c, d, g, h, j
+[0720] a, b, c, d, g, h, j
+[0721] e, g, h, j
+[0722] a, e, g, h, j
+[0723] b, e, g, h, j
+[0724] a, b, e, g, h, j
+[0725] c, e, g, h, j
+[0726] a, c, e, g, h, j
+[0727] b, c, e, g, h, j
+[0728] a, b, c, e, g, h, j
+[0729] d, e, g, h, j
+[0730] a, d, e, g, h, j
+[0731] b, d, e, g, h, j
+[0732] a, b, d, e, g, h, j
+[0733] c, d, e, g, h, j
+[0734] a, c, d, e, g, h, j
+[0735] b, c, d, e, g, h, j
+[0736] a, b, c, d, e, g, h, j
+[0737] f, g, h, j
+[0738] a, f, g, h, j
+[0739] b, f, g, h, j
+[0740] a, b, f, g, h, j
+[0741] c, f, g, h, j
+[0742] a, c, f, g, h, j
+[0743] b, c, f, g, h, j
+[0744] a, b, c, f, g, h, j
+[0745] d, f, g, h, j
+[0746] a, d, f, g, h, j
+[0747] b, d, f, g, h, j
+[0748] a, b, d, f, g, h, j
+[0749] c, d, f, g, h, j
+[0750] a, c, d, f, g, h, j
+[0751] b, c, d, f, g, h, j
+[0752] a, b, c, d, f, g, h, j
+[0753] e, f, g, h, j
+[0754] a, e, f, g, h, j
+[0755] b, e, f, g, h, j
+[0756] a, b, e, f, g, h, j
+[0757] c, e, f, g, h, j
+[0758] a, c, e, f, g, h, j
+[0759] b, c, e, f, g, h, j
+[0760] a, b, c, e, f, g, h, j
+[0761] d, e, f, g, h, j
+[0762] a, d, e, f, g, h, j
+[0763] b, d, e, f, g, h, j
+[0764] a, b, d, e, f, g, h, j
+[0765] c, d, e, f, g, h, j
+[0766] a, c, d, e, f, g, h, j
+[0767] b, c, d, e, f, g, h, j
+[0768] a, b, c, d, e, f, g, h, j
+[0769] i, j
+[0770] a, i, j
+[0771] b, i, j
+[0772] a, b, i, j
+[0773] c, i, j
+[0774] a, c, i, j
+[0775] b, c, i, j
+[0776] a, b, c, i, j
+[0777] d, i, j
+[0778] a, d, i, j
+[0779] b, d, i, j
+[0780] a, b, d, i, j
+[0781] c, d, i, j
+[0782] a, c, d, i, j
+[0783] b, c, d, i, j
+[0784] a, b, c, d, i, j
+[0785] e, i, j
+[0786] a, e, i, j
+[0787] b, e, i, j
+[0788] a, b, e, i, j
+[0789] c, e, i, j
+[0790] a, c, e, i, j
+[0791] b, c, e, i, j
+[0792] a, b, c, e, i, j
+[0793] d, e, i, j
+[0794] a, d, e, i, j
+[0795] b, d, e, i, j
+[0796] a, b, d, e, i, j
+[0797] c, d, e, i, j
+[0798] a, c, d, e, i, j
+[0799] b, c, d, e, i, j
+[0800] a, b, c, d, e, i, j
+[0801] f, i, j
+[0802] a, f, i, j
+[0803] b, f, i, j
+[0804] a, b, f, i, j
+[0805] c, f, i, j
+[0806] a, c, f, i, j
+[0807] b, c, f, i, j
+[0808] a, b, c, f, i, j
+[0809] d, f, i, j
+[0810] a, d, f, i, j
+[0811] b, d, f, i, j
+[0812] a, b, d, f, i, j
+[0813] c, d, f, i, j
+[0814] a, c, d, f, i, j
+[0815] b, c, d, f, i, j
+[0816] a, b, c, d, f, i, j
+[0817] e, f, i, j
+[0818] a, e, f, i, j
+[0819] b, e, f, i, j
+[0820] a, b, e, f, i, j
+[0821] c, e, f, i, j
+[0822] a, c, e, f, i, j
+[0823] b, c, e, f, i, j
+[0824] a, b, c, e, f, i, j
+[0825] d, e, f, i, j
+[0826] a, d, e, f, i, j
+[0827] b, d, e, f, i, j
+[0828] a, b, d, e, f, i, j
+[0829] c, d, e, f, i, j
+[0830] a, c, d, e, f, i, j
+[0831] b, c, d, e, f, i, j
+[0832] a, b, c, d, e, f, i, j
+[0833] g, i, j
+[0834] a, g, i, j
+[0835] b, g, i, j
+[0836] a, b, g, i, j
+[0837] c, g, i, j
+[0838] a, c, g, i, j
+[0839] b, c, g, i, j
+[0840] a, b, c, g, i, j
+[0841] d, g, i, j
+[0842] a, d, g, i, j
+[0843] b, d, g, i, j
+[0844] a, b, d, g, i, j
+[0845] c, d, g, i, j
+[0846] a, c, d, g, i, j
+[0847] b, c, d, g, i, j
+[0848] a, b, c, d, g, i, j
+[0849] e, g, i, j
+[0850] a, e, g, i, j
+[0851] b, e, g, i, j
+[0852] a, b, e, g, i, j
+[0853] c, e, g, i, j
+[0854] a, c, e, g, i, j
+[0855] b, c, e, g, i, j
+[0856] a, b, c, e, g, i, j
+[0857] d, e, g, i, j
+[0858] a, d, e, g, i, j
+[0859] b, d, e, g, i, j
+[0860] a, b, d, e, g, i, j
+[0861] c, d, e, g, i, j
+[0862] a, c, d, e, g, i, j
+[0863] b, c, d, e, g, i, j
+[0864] a, b, c, d, e, g, i, j
+[0865] f, g, i, j
+[0866] a, f, g, i, j
+[0867] b, f, g, i, j
+[0868] a, b, f, g, i, j
+[0869] c, f, g, i, j
+[0870] a, c, f, g, i, j
+[0871] b, c, f, g, i, j
+[0872] a, b, c, f, g, i, j
+[0873] d, f, g, i, j
+[0874] a, d, f, g, i, j
+[0875] b, d, f, g, i, j
+[0876] a, b, d, f, g, i, j
+[0877] c, d, f, g, i, j
+[0878] a, c, d, f, g, i, j
+[0879] b, c, d, f, g, i, j
+[0880] a, b, c, d, f, g, i, j
+[0881] e, f, g, i, j
+[0882] a, e, f, g, i, j
+[0883] b, e, f, g, i, j
+[0884] a, b, e, f, g, i, j
+[0885] c, e, f, g, i, j
+[0886] a, c, e, f, g, i, j
+[0887] b, c, e, f, g, i, j
+[0888] a, b, c, e, f, g, i, j
+[0889] d, e, f, g, i, j
+[0890] a, d, e, f, g, i, j
+[0891] b, d, e, f, g, i, j
+[0892] a, b, d, e, f, g, i, j
+[0893] c, d, e, f, g, i, j
+[0894] a, c, d, e, f, g, i, j
+[0895] b, c, d, e, f, g, i, j
+[0896] a, b, c, d, e, f, g, i, j
+[0897] h, i, j
+[0898] a, h, i, j
+[0899] b, h, i, j
+[0900] a, b, h, i, j
+[0901] c, h, i, j
+[0902] a, c, h, i, j
+[0903] b, c, h, i, j
+[0904] a, b, c, h, i, j
+[0905] d, h, i, j
+[0906] a, d, h, i, j
+[0907] b, d, h, i, j
+[0908] a, b, d, h, i, j
+[0909] c, d, h, i, j
+[0910] a, c, d, h, i, j
+[0911] b, c, d, h, i, j
+[0912] a, b, c, d, h, i, j
+[0913] e, h, i, j
+[0914] a, e, h, i, j
+[0915] b, e, h, i, j
+[0916] a, b, e, h, i, j
+[0917] c, e, h, i, j
+[0918] a, c, e, h, i, j
+[0919] b, c, e, h, i, j
+[0920] a, b, c, e, h, i, j
+[0921] d, e, h, i, j
+[0922] a, d, e, h, i, j
+[0923] b, d, e, h, i, j
+[0924] a, b, d, e, h, i, j
+[0925] c, d, e, h, i, j
+[0926] a, c, d, e, h, i, j
+[0927] b, c, d, e, h, i, j
+[0928] a, b, c, d, e, h, i, j
+[0929] f, h, i, j
+[0930] a, f, h, i, j
+[0931] b, f, h, i, j
+[0932] a, b, f, h, i, j
+[0933] c, f, h, i, j
+[0934] a, c, f, h, i, j
+[0935] b, c, f, h, i, j
+[0936] a, b, c, f, h, i, j
+[0937] d, f, h, i, j
+[0938] a, d, f, h, i, j
+[0939] b, d, f, h, i, j
+[0940] a, b, d, f, h, i, j
+[0941] c, d, f, h, i, j
+[0942] a, c, d, f, h, i, j
+[0943] b, c, d, f, h, i, j
+[0944] a, b, c, d, f, h, i, j
+[0945] e, f, h, i, j
+[0946] a, e, f, h, i, j
+[0947] b, e, f, h, i, j
+[0948] a, b, e, f, h, i, j
+[0949] c, e, f, h, i, j
+[0950] a, c, e, f, h, i, j
+[0951] b, c, e, f, h, i, j
+[0952] a, b, c, e, f, h, i, j
+[0953] d, e, f, h, i, j
+[0954] a, d, e, f, h, i, j
+[0955] b, d, e, f, h, i, j
+[0956] a, b, d, e, f, h, i, j
+[0957] c, d, e, f, h, i, j
+[0958] a, c, d, e, f, h, i, j
+[0959] b, c, d, e, f, h, i, j
+[0960] a, b, c, d, e, f, h, i, j
+[0961] g, h, i, j
+[0962] a, g, h, i, j
+[0963] b, g, h, i, j
+[0964] a, b, g, h, i, j
+[0965] c, g, h, i, j
+[0966] a, c, g, h, i, j
+[0967] b, c, g, h, i, j
+[0968] a, b, c, g, h, i, j
+[0969] d, g, h, i, j
+[0970] a, d, g, h, i, j
+[0971] b, d, g, h, i, j
+[0972] a, b, d, g, h, i, j
+[0973] c, d, g, h, i, j
+[0974] a, c, d, g, h, i, j
+[0975] b, c, d, g, h, i, j
+[0976] a, b, c, d, g, h, i, j
+[0977] e, g, h, i, j
+[0978] a, e, g, h, i, j
+[0979] b, e, g, h, i, j
+[0980] a, b, e, g, h, i, j
+[0981] c, e, g, h, i, j
+[0982] a, c, e, g, h, i, j
+[0983] b, c, e, g, h, i, j
+[0984] a, b, c, e, g, h, i, j
+[0985] d, e, g, h, i, j
+[0986] a, d, e, g, h, i, j
+[0987] b, d, e, g, h, i, j
+[0988] a, b, d, e, g, h, i, j
+[0989] c, d, e, g, h, i, j
+[0990] a, c, d, e, g, h, i, j
+[0991] b, c, d, e, g, h, i, j
+[0992] a, b, c, d, e, g, h, i, j
+[0993] f, g, h, i, j
+[0994] a, f, g, h, i, j
+[0995] b, f, g, h, i, j
+[0996] a, b, f, g, h, i, j
+[0997] c, f, g, h, i, j
+[0998] a, c, f, g, h, i, j
+[0999] b, c, f, g, h, i, j
+[1000] a, b, c, f, g, h, i, j
+[1001] d, f, g, h, i, j
+[1002] a, d, f, g, h, i, j
+[1003] b, d, f, g, h, i, j
+[1004] a, b, d, f, g, h, i, j
+[1005] c, d, f, g, h, i, j
+[1006] a, c, d, f, g, h, i, j
+[1007] b, c, d, f, g, h, i, j
+[1008] a, b, c, d, f, g, h, i, j
+[1009] e, f, g, h, i, j
+[1010] a, e, f, g, h, i, j
+[1011] b, e, f, g, h, i, j
+[1012] a, b, e, f, g, h, i, j
+[1013] c, e, f, g, h, i, j
+[1014] a, c, e, f, g, h, i, j
+[1015] b, c, e, f, g, h, i, j
+[1016] a, b, c, e, f, g, h, i, j
+[1017] d, e, f, g, h, i, j
+[1018] a, d, e, f, g, h, i, j
+[1019] b, d, e, f, g, h, i, j
+[1020] a, b, d, e, f, g, h, i, j
+[1021] c, d, e, f, g, h, i, j
+[1022] a, c, d, e, f, g, h, i, j
+[1023] b, c, d, e, f, g, h, i, j
+[1024] a, b, c, d, e, f, g, h, i, j
+
+************************************************************
+309fa3077669836af00feb7174109b3eec1afb73
+its initial commit of discrete_assignment_04
+made by LeeHomin0118
+Name : LeeHomin
+student ID : 20192750
+************************************************************
