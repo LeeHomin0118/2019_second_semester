@@ -5,6 +5,64 @@
 #include <time.h>
 
 int main() {
+	FILE *fp1 = fopen("TWICE.bmp", "r");
+	if (fp1 == NULL) {
+		printf("fale to open file.");
+		return 0;
+	}
+	char arr[24][64] = { 0 };
+	fseek(fp1, 62, SEEK_SET);
+	for (int i = 0; i < 24; i++) {
+		for (int j = 0; j < 8; j++) {
+			unsigned char a;
+			unsigned char b = 128;
+			fread(&a, sizeof(a), 1, fp1);
+			for (int k = 0; k < 8; k++) {
+				if (a&b) arr[23 - i][j * 8 + k] = '*';
+				else arr[23 - i][j * 8 + k] = ' ';
+				b >>= 1;
+			}
+		}
+	}
+	for (int i = 0; i < 24; i++) {
+		for (int j = 0; j < 64; j++) {
+			printf("%c", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+
+/*
+typedef unsigned int ui;
+typedef unsigned short us;
+
+#pragma pack(push, 1)
+typedef struct BMP_HEADER {
+	us bftype;
+	ui bfsize;
+	us bfr1;
+	us bfr2;
+	ui bfoffset;
+} bmp_header;
+typedef struct BMP_INFO_HEADER {
+	ui bisize;
+	ui biwidth;
+	ui biheight;
+	us biplanse;
+	us bibitcount;
+	ui bicompres;
+	ui bisizeimg;
+	ui bixpels;
+	ui biypels;
+	ui biclru;
+	ui biclri;
+} bmp_info_header;
+#pragma pack(pop)
+*/
+
+/*
+int main() {
 	char *fname = "admin_birth.txt";
 	FILE *file = fopen(fname, "r");
 	int year, month, day;
@@ -25,6 +83,7 @@ int main() {
 		else printf("관리자가 아닙니다. 실행할 수 없습니다.");
 	}
 }
+*/
 /*
 int main() {
 	FILE *pFile;
