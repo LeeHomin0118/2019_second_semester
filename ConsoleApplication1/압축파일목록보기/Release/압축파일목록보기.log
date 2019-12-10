@@ -1,5 +1,5 @@
 ﻿  압축파일목록보기.c
-c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\압축파일목록보기\압축파일목록보기.c(92): warning C4047: '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\leeho\desktop\github_project\2019_second_semester\consoleapplication1\압축파일목록보기\압축파일목록보기.c(80): warning C4047: '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
   코드를 생성하고 있습니다.
   1 of 4 functions (25.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
